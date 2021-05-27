@@ -1,0 +1,10 @@
+D:\Git TTCM\ThucTapChuyenMon\project\bin\Debug\project.exe.config
+D:\Git TTCM\ThucTapChuyenMon\project\bin\Debug\project.exe
+D:\Git TTCM\ThucTapChuyenMon\project\bin\Debug\project.pdb
+D:\Git TTCM\ThucTapChuyenMon\project\obj\Debug\project.csprojAssemblyReference.cache
+D:\Git TTCM\ThucTapChuyenMon\project\obj\Debug\project.DisplayStaff.resources
+D:\Git TTCM\ThucTapChuyenMon\project\obj\Debug\project.Login.resources
+D:\Git TTCM\ThucTapChuyenMon\project\obj\Debug\project.Properties.Resources.resources
+D:\Git TTCM\ThucTapChuyenMon\project\obj\Debug\project.csproj.GenerateResource.cache
+D:\Git TTCM\ThucTapChuyenMon\project\obj\Debug\project.exe
+D:\Git TTCM\ThucTapChuyenMon\project\obj\Debug\project.pdb
