@@ -1,4 +1,5 @@
-﻿using System;
+﻿using project.DAO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,16 +18,37 @@ namespace project
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            DisplayStaff d = new DisplayStaff();
-            this.Hide();
-            d.ShowDialog();
+           
+            string userName = txtID.Text;
+            string pass = txtPass.Text;
+            if (Login1(userName, pass))
+            {
+                DisplayStaff d = new DisplayStaff();
+                this.Hide();
+                d.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Tên đăng nhập hoặc tài khoản không hợp lệ, Xin vui lòng nhập lại");
+            }
+        }
+
+        bool Login1(string userName, string pass)
+        {
+            return LoginDAO.Instance.Login(userName, pass);
+        }
+
+        private void Login_FormClosed(object sender, FormClosedEventArgs e)
+        {
+
+            DialogResult close = MessageBox.Show("Bạn có muốn thoát khỏi chương trình ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (close == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
         }
     }
 }

@@ -44,7 +44,6 @@
             this.label1.Size = new System.Drawing.Size(367, 38);
             this.label1.TabIndex = 0;
             this.label1.Text = "Đăng Nhập Nhân Viên";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -106,6 +105,7 @@
             this.Controls.Add(this.label1);
             this.Name = "Login";
             this.Text = "Login";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Login_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 
