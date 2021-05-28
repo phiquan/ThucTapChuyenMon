@@ -74,41 +74,45 @@ create table Kho
 	Number int,
 )
 
---Manager--
-INSERT INTO Manager(Name,Email,Pass,PhoneNumber,Addr,DateOfBirth) VALUES('phiquan','phiquan2509@gmail.com','123','898043575','An Giang','2000-09-25')
+begin
+
+		--Manager--
+	INSERT INTO Manager(Name,Email,Pass,PhoneNumber,Addr,DateOfBirth) VALUES('phiquan','phiquan2509@gmail.com','123','898043575','An Giang','2000-09-25')
 
 
---Staff--
-INSERT INTO Staff Values('Vo Phi Quan','phiquan@gmail.com','123','Nam')
+	--Staff--
+	INSERT INTO Staff Values('Vo Phi Quan','phiquan@gmail.com','123','Nam')
 
---Food--
-INSERT INTO Food Values('001','combo1',79000)
-INSERT INTO Food Values('002','combo2',79000)
-INSERT INTO Food Values('003','combo3',79000)
-INSERT INTO Food Values('101','Nước Ngọt',10000)
-INSERT INTO Food Values('201','Gà cay',20000)
-INSERT INTO Food Values('202','Gà không cay',20000)
-SELECT * FROM Food
---InforFood--
-INSERT INTO InforFood Values('0001','001','Gà miếng',2)
-INSERT INTO InforFood Values('0002','001','Nước ngọt',1)
+	--Food--
+	INSERT INTO Food Values('001','combo1',79000)
+	INSERT INTO Food Values('002','combo2',79000)
+	INSERT INTO Food Values('003','combo3',79000)
+	INSERT INTO Food Values('101','Nước Ngọt',10000)
+	INSERT INTO Food Values('201','Gà cay',20000)
+	INSERT INTO Food Values('202','Gà không cay',20000)
 
-INSERT INTO InforFood Values('0003','002','Gà miếng',3)
-INSERT INTO InforFood Values('0004','002','Nước ngọt',1)
+	--InforFood--
+	INSERT INTO InforFood Values('0001','001','Gà miếng',2)
+	INSERT INTO InforFood Values('0002','001','Nước ngọt',1)
 
-INSERT INTO InforFood Values('0005','003','Gà miếng',2)
-INSERT INTO InforFood Values('0006','003','Nước ngọt',2)
-INSERT INTO InforFood Values('0007','003','Sandwich',1)
+	INSERT INTO InforFood Values('0003','002','Gà miếng',3)
+	INSERT INTO InforFood Values('0004','002','Nước ngọt',1)
 
-INSERT INTO InforFood Values('0008','101','Nước ngọt',1)
+	INSERT INTO InforFood Values('0005','003','Gà miếng',2)
+	INSERT INTO InforFood Values('0006','003','Nước ngọt',2)
+	INSERT INTO InforFood Values('0007','003','Sandwich',1)
 
-INSERT INTO InforFood Values('0009','201','Gà miếng',1)
+	INSERT INTO InforFood Values('0008','101','Nước ngọt',1)
 
-INSERT INTO InforFood Values('0010','202','Gà miếng',1)
+	INSERT INTO InforFood Values('0009','201','Gà miếng',1)
 
---KHO--
-INSERT INTO Kho Values('00001','Gà miếng',200)
-INSERT INTO Kho Values('00002','Sandwich',30)
-INSERT INTO Kho Values('00003','Nước ngọt',100)
+	INSERT INTO InforFood Values('0010','202','Gà miếng',1)
+
+	--KHO--
+	INSERT INTO Kho Values('00001','Gà miếng',200)
+	INSERT INTO Kho Values('00002','Sandwich',30)
+	INSERT INTO Kho Values('00003','Nước ngọt',100)
+
+end
 
 
