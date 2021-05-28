@@ -18,8 +18,8 @@ namespace project.DAO
             private set { DataProvider.instance = value; }
         }
 
-       
 
+        private DataProvider() { }
         private string connStr = "Data Source=DESKTOP-Q4GRQFB\\SQLEXPRESS;Initial Catalog=TTCM;Integrated Security=True";
 
         public DataTable ExecuteQuery(string query)

@@ -60,7 +60,13 @@ namespace project
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
-
+            var logout = MessageBox.Show("Bạn có muốn đăng xuất", "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            if(logout == DialogResult.Yes)
+            {
+                Login lg = new Login();
+                this.Hide();
+                lg.ShowDialog();
+            }
         }
     }
 }

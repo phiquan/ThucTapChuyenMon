@@ -32,7 +32,7 @@ namespace project
             }
             else
             {
-                MessageBox.Show("Tên đăng nhập hoặc tài khoản không hợp lệ, Xin vui lòng nhập lại");
+                MessageBox.Show("Tên đăng nhập hoặc tài khoản không hợp lệ, Xin vui lòng nhập lại","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Warning);
             }
         }
 
