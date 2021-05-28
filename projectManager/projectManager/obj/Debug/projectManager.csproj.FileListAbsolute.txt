@@ -1,0 +1,11 @@
+D:\Git TTCM\ThucTapChuyenMon\projectManager\projectManager\bin\Debug\projectManager.exe.config
+D:\Git TTCM\ThucTapChuyenMon\projectManager\projectManager\bin\Debug\projectManager.exe
+D:\Git TTCM\ThucTapChuyenMon\projectManager\projectManager\bin\Debug\projectManager.pdb
+D:\Git TTCM\ThucTapChuyenMon\projectManager\projectManager\obj\Debug\projectManager.csprojAssemblyReference.cache
+D:\Git TTCM\ThucTapChuyenMon\projectManager\projectManager\obj\Debug\projectManager.DisplayManager.resources
+D:\Git TTCM\ThucTapChuyenMon\projectManager\projectManager\obj\Debug\projectManager.Login.resources
+D:\Git TTCM\ThucTapChuyenMon\projectManager\projectManager\obj\Debug\projectManager.Properties.Resources.resources
+D:\Git TTCM\ThucTapChuyenMon\projectManager\projectManager\obj\Debug\projectManager.csproj.GenerateResource.cache
+D:\Git TTCM\ThucTapChuyenMon\projectManager\projectManager\obj\Debug\projectManager.exe
+D:\Git TTCM\ThucTapChuyenMon\projectManager\projectManager\obj\Debug\projectManager.pdb
+D:\Git TTCM\ThucTapChuyenMon\projectManager\projectManager\obj\Debug\projectManager.AddProduct.resources
