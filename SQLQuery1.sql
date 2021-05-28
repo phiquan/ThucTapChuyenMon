@@ -41,10 +41,12 @@ create table InforFood
 (
 	IDInforFood int PRIMARY KEY,
 	IDFood int ,
-	NameFood nvarchar(50),
+	Name nvarchar(50),
+	ID int,
 	Number int,
 
-	FOREIGN KEY (IDFood) REFERENCES Food(IDFood)
+	FOREIGN KEY (IDFood) REFERENCES Food(IDFood),
+	FOREIGN KEY (ID) REFERENCES Kho(ID)
 )
 
 create table InforBill
@@ -92,21 +94,21 @@ begin
 	INSERT INTO Food Values('202','Gà không cay',20000)
 
 	--InforFood--
-	INSERT INTO InforFood Values('0001','001','Gà miếng',2)
-	INSERT INTO InforFood Values('0002','001','Nước ngọt',1)
+	INSERT INTO InforFood Values('0001','001','Gà miếng','00001',2)
+	INSERT INTO InforFood Values('0002','001','Nước ngọt','00003',1)
 
-	INSERT INTO InforFood Values('0003','002','Gà miếng',3)
-	INSERT INTO InforFood Values('0004','002','Nước ngọt',1)
+	INSERT INTO InforFood Values('0003','002','Gà miếng','00001',3)
+	INSERT INTO InforFood Values('0004','002','Nước ngọt','00003',1)
 
-	INSERT INTO InforFood Values('0005','003','Gà miếng',2)
-	INSERT INTO InforFood Values('0006','003','Nước ngọt',2)
-	INSERT INTO InforFood Values('0007','003','Sandwich',1)
+	INSERT INTO InforFood Values('0005','003','Gà miếng','00001',2)
+	INSERT INTO InforFood Values('0006','003','Nước ngọt','00003',2)
+	INSERT INTO InforFood Values('0007','003','Sandwich','00002',1)
 
-	INSERT INTO InforFood Values('0008','101','Nước ngọt',1)
+	INSERT INTO InforFood Values('0008','101','Nước ngọt','00003',1)
 
-	INSERT INTO InforFood Values('0009','201','Gà miếng',1)
+	INSERT INTO InforFood Values('0009','201','Gà miếng','00001',1)
 
-	INSERT INTO InforFood Values('0010','202','Gà miếng',1)
+	INSERT INTO InforFood Values('0010','202','Gà miếng','00001',1)
 
 	--KHO--
 	INSERT INTO Kho Values('00001','Gà miếng',200)
