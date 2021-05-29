@@ -52,6 +52,8 @@
     <Compile Include="AddProduct.Designer.cs">
       <DependentUpon>AddProduct.cs</DependentUpon>
     </Compile>
+    <Compile Include="DAO\DataProvider.cs" />
+    <Compile Include="DAO\LoginDAO.cs" />
     <Compile Include="DisplayManager.cs">
       <SubType>Form</SubType>
     </Compile>
