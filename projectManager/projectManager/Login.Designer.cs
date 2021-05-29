@@ -53,7 +53,7 @@
             this.txtPass.Location = new System.Drawing.Point(405, 246);
             this.txtPass.Multiline = true;
             this.txtPass.Name = "txtPass";
-            this.txtPass.Size = new System.Drawing.Size(191, 27);
+            this.txtPass.Size = new System.Drawing.Size(239, 27);
             this.txtPass.TabIndex = 10;
             // 
             // txtEmail
@@ -62,7 +62,7 @@
             this.txtEmail.Location = new System.Drawing.Point(405, 187);
             this.txtEmail.Multiline = true;
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(191, 27);
+            this.txtEmail.Size = new System.Drawing.Size(239, 27);
             this.txtEmail.TabIndex = 9;
             // 
             // label3

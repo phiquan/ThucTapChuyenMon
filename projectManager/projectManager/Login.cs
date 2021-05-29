@@ -1,4 +1,5 @@
-﻿using System;
+﻿using projectManager.DAO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,10 +19,23 @@ namespace projectManager
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
+        {            
+            string user = txtEmail.Text;
+            string pass = txtPass.Text;
+            if(LoginManager(user,pass) == true)
+            {
+                DisplayManager dis = new DisplayManager();
+                this.Hide();
+                dis.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Mật khẩu hoặc tài khoản sai!!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+        bool LoginManager(string user, string pass)
         {
-            DisplayManager dis = new DisplayManager();
-            this.Hide();
-            dis.ShowDialog();
+            return LoginDAO.Instance.LoginManager(user, pass);
         }
     }
 }

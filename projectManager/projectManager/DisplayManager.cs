@@ -27,6 +27,10 @@ namespace projectManager
 
         }
 
-    
+        private void btnAddProd_Click(object sender, EventArgs e)
+        {
+            AddProduct add = new AddProduct();
+            add.Show();
+        }
     }
 }

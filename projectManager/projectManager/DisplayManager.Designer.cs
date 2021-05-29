@@ -29,9 +29,19 @@
         private void InitializeComponent()
         {
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.label15 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label14 = new System.Windows.Forms.Label();
+            this.txtNumberDifference = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.txtNumberChange = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.txtNumber = new System.Windows.Forms.TextBox();
+            this.txtProductChange = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.txtProduct = new System.Windows.Forms.TextBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
@@ -52,31 +62,19 @@
             this.txtName = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.txtProductChange = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.txtNumberChange = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.txtProductDifference = new System.Windows.Forms.TextBox();
-            this.txtNumberDifference = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label15 = new System.Windows.Forms.Label();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.label16 = new System.Windows.Forms.Label();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
-            this.label18 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label17 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label19 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.btnAddProd = new System.Windows.Forms.Button();
-            this.btnUpdateProd = new System.Windows.Forms.Button();
-            this.btnDeleteProd = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
+            this.btnDeleteProd = new System.Windows.Forms.Button();
+            this.btnUpdateProd = new System.Windows.Forms.Button();
+            this.btnAddProd = new System.Windows.Forms.Button();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.label16 = new System.Windows.Forms.Label();
             this.tabPage3.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -98,13 +96,21 @@
             this.tabPage3.Text = "Doanh Số";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Times New Roman", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(349, 3);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(211, 55);
+            this.label15.TabIndex = 2;
+            this.label15.Text = "Doanh Số";
+            // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.button1);
             this.tabPage2.Controls.Add(this.label14);
-            this.tabPage2.Controls.Add(this.label13);
             this.tabPage2.Controls.Add(this.txtNumberDifference);
-            this.tabPage2.Controls.Add(this.txtProductDifference);
             this.tabPage2.Controls.Add(this.label10);
             this.tabPage2.Controls.Add(this.label7);
             this.tabPage2.Controls.Add(this.label12);
@@ -125,6 +131,60 @@
             this.tabPage2.Text = "Kho";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(795, 521);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(115, 56);
+            this.button1.TabIndex = 20;
+            this.button1.Text = "Xuất Excel";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(370, 294);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(628, 25);
+            this.label14.TabIndex = 19;
+            this.label14.Text = "---------------------------------------------------------------------------------" +
+    "-------";
+            // 
+            // txtNumberDifference
+            // 
+            this.txtNumberDifference.Location = new System.Drawing.Point(829, 470);
+            this.txtNumberDifference.Name = "txtNumberDifference";
+            this.txtNumberDifference.Size = new System.Drawing.Size(81, 30);
+            this.txtNumberDifference.TabIndex = 17;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(370, 354);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(183, 25);
+            this.label10.TabIndex = 14;
+            this.label10.Text = "Sản Phẩm Thực Tế";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(370, 95);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(202, 25);
+            this.label7.TabIndex = 13;
+            this.label7.Text = "Sản Phẩm Trong Kho";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(370, 470);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(97, 25);
+            this.label12.TabIndex = 12;
+            this.label12.Text = "Số Lượng";
+            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -134,12 +194,35 @@
             this.label9.TabIndex = 12;
             this.label9.Text = "Số Lượng";
             // 
+            // txtNumberChange
+            // 
+            this.txtNumberChange.Location = new System.Drawing.Point(540, 470);
+            this.txtNumberChange.Name = "txtNumberChange";
+            this.txtNumberChange.Size = new System.Drawing.Size(252, 30);
+            this.txtNumberChange.TabIndex = 11;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(370, 408);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(144, 25);
+            this.label11.TabIndex = 12;
+            this.label11.Text = "Tên Sản Phẩm";
+            // 
             // txtNumber
             // 
             this.txtNumber.Location = new System.Drawing.Point(540, 214);
             this.txtNumber.Name = "txtNumber";
             this.txtNumber.Size = new System.Drawing.Size(252, 30);
             this.txtNumber.TabIndex = 11;
+            // 
+            // txtProductChange
+            // 
+            this.txtProductChange.Location = new System.Drawing.Point(540, 405);
+            this.txtProductChange.Name = "txtProductChange";
+            this.txtProductChange.Size = new System.Drawing.Size(252, 30);
+            this.txtProductChange.TabIndex = 11;
             // 
             // label8
             // 
@@ -336,109 +419,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Thông Tin Nhân Viên";
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(370, 95);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(202, 25);
-            this.label7.TabIndex = 13;
-            this.label7.Text = "Sản Phẩm Trong Kho";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(370, 354);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(183, 25);
-            this.label10.TabIndex = 14;
-            this.label10.Text = "Sản Phẩm Thực Tế";
-            // 
-            // txtProductChange
-            // 
-            this.txtProductChange.Location = new System.Drawing.Point(540, 405);
-            this.txtProductChange.Name = "txtProductChange";
-            this.txtProductChange.Size = new System.Drawing.Size(252, 30);
-            this.txtProductChange.TabIndex = 11;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(370, 408);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(144, 25);
-            this.label11.TabIndex = 12;
-            this.label11.Text = "Tên Sản Phẩm";
-            // 
-            // txtNumberChange
-            // 
-            this.txtNumberChange.Location = new System.Drawing.Point(540, 470);
-            this.txtNumberChange.Name = "txtNumberChange";
-            this.txtNumberChange.Size = new System.Drawing.Size(252, 30);
-            this.txtNumberChange.TabIndex = 11;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(370, 470);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(97, 25);
-            this.label12.TabIndex = 12;
-            this.label12.Text = "Số Lượng";
-            // 
-            // txtProductDifference
-            // 
-            this.txtProductDifference.Location = new System.Drawing.Point(829, 405);
-            this.txtProductDifference.Name = "txtProductDifference";
-            this.txtProductDifference.Size = new System.Drawing.Size(81, 30);
-            this.txtProductDifference.TabIndex = 16;
-            // 
-            // txtNumberDifference
-            // 
-            this.txtNumberDifference.Location = new System.Drawing.Point(829, 470);
-            this.txtNumberDifference.Name = "txtNumberDifference";
-            this.txtNumberDifference.Size = new System.Drawing.Size(81, 30);
-            this.txtNumberDifference.TabIndex = 17;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(809, 354);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(119, 25);
-            this.label13.TabIndex = 18;
-            this.label13.Text = "Chênh Lệch";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(370, 294);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(628, 25);
-            this.label14.TabIndex = 19;
-            this.label14.Text = "---------------------------------------------------------------------------------" +
-    "-------";
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(795, 521);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(115, 56);
-            this.button1.TabIndex = 20;
-            this.button1.Text = "Xuất Excel";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Times New Roman", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(349, 3);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(211, 55);
-            this.label15.TabIndex = 2;
-            this.label15.Text = "Doanh Số";
-            // 
             // tabPage4
             // 
             this.tabPage4.Controls.Add(this.btnClear);
@@ -461,61 +441,50 @@
             this.tabPage4.Text = "Sẩn Phẩm";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
-            // label16
+            // btnClear
             // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Times New Roman", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(308, 2);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(423, 55);
-            this.label16.TabIndex = 2;
-            this.label16.Text = "Thông Tin Sản Phẩm";
+            this.btnClear.Location = new System.Drawing.Point(899, 489);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(100, 45);
+            this.btnClear.TabIndex = 14;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = true;
             // 
-            // dataGridView3
+            // btnDeleteProd
             // 
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Location = new System.Drawing.Point(6, 85);
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.RowHeadersWidth = 51;
-            this.dataGridView3.RowTemplate.Height = 24;
-            this.dataGridView3.Size = new System.Drawing.Size(569, 509);
-            this.dataGridView3.TabIndex = 3;
+            this.btnDeleteProd.Location = new System.Drawing.Point(793, 489);
+            this.btnDeleteProd.Name = "btnDeleteProd";
+            this.btnDeleteProd.Size = new System.Drawing.Size(100, 45);
+            this.btnDeleteProd.TabIndex = 13;
+            this.btnDeleteProd.Text = "Xóa";
+            this.btnDeleteProd.UseVisualStyleBackColor = true;
             // 
-            // label18
+            // btnUpdateProd
             // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(634, 122);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(112, 22);
-            this.label18.TabIndex = 9;
-            this.label18.Text = "ID Sản Phẩm";
+            this.btnUpdateProd.Location = new System.Drawing.Point(687, 489);
+            this.btnUpdateProd.Name = "btnUpdateProd";
+            this.btnUpdateProd.Size = new System.Drawing.Size(100, 45);
+            this.btnUpdateProd.TabIndex = 12;
+            this.btnUpdateProd.Text = "Sửa";
+            this.btnUpdateProd.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // btnAddProd
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(638, 147);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(295, 30);
-            this.textBox1.TabIndex = 10;
+            this.btnAddProd.Location = new System.Drawing.Point(581, 489);
+            this.btnAddProd.Name = "btnAddProd";
+            this.btnAddProd.Size = new System.Drawing.Size(100, 45);
+            this.btnAddProd.TabIndex = 11;
+            this.btnAddProd.Text = "Thêm";
+            this.btnAddProd.UseVisualStyleBackColor = true;
+            this.btnAddProd.Click += new System.EventHandler(this.btnAddProd_Click);
             // 
-            // label17
+            // textBox3
             // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(634, 236);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(122, 22);
-            this.label17.TabIndex = 9;
-            this.label17.Text = "Tên Sản Phẩm";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(638, 261);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(295, 30);
-            this.textBox2.TabIndex = 10;
+            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox3.Location = new System.Drawing.Point(638, 395);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(295, 30);
+            this.textBox3.TabIndex = 10;
             // 
             // label19
             // 
@@ -527,49 +496,61 @@
             this.label19.TabIndex = 9;
             this.label19.Text = "Giá Sản Phẩm";
             // 
-            // textBox3
+            // textBox2
             // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(638, 395);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(295, 30);
-            this.textBox3.TabIndex = 10;
+            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.Location = new System.Drawing.Point(638, 261);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(295, 30);
+            this.textBox2.TabIndex = 10;
             // 
-            // btnAddProd
+            // label17
             // 
-            this.btnAddProd.Location = new System.Drawing.Point(581, 489);
-            this.btnAddProd.Name = "btnAddProd";
-            this.btnAddProd.Size = new System.Drawing.Size(100, 45);
-            this.btnAddProd.TabIndex = 11;
-            this.btnAddProd.Text = "Thêm";
-            this.btnAddProd.UseVisualStyleBackColor = true;
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(634, 236);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(122, 22);
+            this.label17.TabIndex = 9;
+            this.label17.Text = "Tên Sản Phẩm";
             // 
-            // btnUpdateProd
+            // textBox1
             // 
-            this.btnUpdateProd.Location = new System.Drawing.Point(687, 489);
-            this.btnUpdateProd.Name = "btnUpdateProd";
-            this.btnUpdateProd.Size = new System.Drawing.Size(100, 45);
-            this.btnUpdateProd.TabIndex = 12;
-            this.btnUpdateProd.Text = "Sửa";
-            this.btnUpdateProd.UseVisualStyleBackColor = true;
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(638, 147);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(295, 30);
+            this.textBox1.TabIndex = 10;
             // 
-            // btnDeleteProd
+            // label18
             // 
-            this.btnDeleteProd.Location = new System.Drawing.Point(793, 489);
-            this.btnDeleteProd.Name = "btnDeleteProd";
-            this.btnDeleteProd.Size = new System.Drawing.Size(100, 45);
-            this.btnDeleteProd.TabIndex = 13;
-            this.btnDeleteProd.Text = "Xóa";
-            this.btnDeleteProd.UseVisualStyleBackColor = true;
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(634, 122);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(112, 22);
+            this.label18.TabIndex = 9;
+            this.label18.Text = "ID Sản Phẩm";
             // 
-            // btnClear
+            // dataGridView3
             // 
-            this.btnClear.Location = new System.Drawing.Point(899, 489);
-            this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(100, 45);
-            this.btnClear.TabIndex = 14;
-            this.btnClear.Text = "Clear";
-            this.btnClear.UseVisualStyleBackColor = true;
+            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.Location = new System.Drawing.Point(6, 85);
+            this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.RowHeadersWidth = 51;
+            this.dataGridView3.RowTemplate.Height = 24;
+            this.dataGridView3.Size = new System.Drawing.Size(569, 509);
+            this.dataGridView3.TabIndex = 3;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Times New Roman", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(308, 2);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(423, 55);
+            this.label16.TabIndex = 2;
+            this.label16.Text = "Thông Tin Sản Phẩm";
             // 
             // DisplayManager
             // 
@@ -621,9 +602,7 @@
         private System.Windows.Forms.TextBox txtProduct;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox txtNumberDifference;
-        private System.Windows.Forms.TextBox txtProductDifference;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label12;
