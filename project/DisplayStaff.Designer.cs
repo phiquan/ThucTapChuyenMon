@@ -63,6 +63,7 @@
             this.btnSeeRevenue.TabIndex = 2;
             this.btnSeeRevenue.Text = "Xem Lại Bill";
             this.btnSeeRevenue.UseVisualStyleBackColor = true;
+            this.btnSeeRevenue.Click += new System.EventHandler(this.btnSeeRevenue_Click);
             // 
             // dataGridView1
             // 
@@ -79,6 +80,7 @@
             this.dataGridView1.Size = new System.Drawing.Size(519, 554);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // Column1
             // 
@@ -165,6 +167,7 @@
             this.button3.TabIndex = 5;
             this.button3.Text = "In Bill";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // DisplayStaff
             // 

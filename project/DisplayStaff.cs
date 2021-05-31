@@ -68,5 +68,24 @@ namespace project
                 lg.ShowDialog();
             }
         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void btnSeeRevenue_Click(object sender, EventArgs e)
+        {
+            ReviewBill rb = new ReviewBill();
+            this.Hide();
+            rb.ShowDialog();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Pay pay = new Pay();
+            this.Hide();
+            pay.ShowDialog();
+        }
     }
 }

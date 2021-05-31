@@ -48,6 +48,8 @@
   <ItemGroup>
     <Compile Include="DAO\DataProvider.cs" />
     <Compile Include="DAO\LoginDAO.cs" />
+    <Compile Include="DAO\LoginDeleteDAO.cs" />
+    <Compile Include="DAO\MenuDAO.cs" />
     <Compile Include="DisplayStaff.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -60,13 +62,37 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="LoginDelete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginDelete.Designer.cs">
+      <DependentUpon>LoginDelete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pay.Designer.cs">
+      <DependentUpon>Pay.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReviewBill.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReviewBill.Designer.cs">
+      <DependentUpon>ReviewBill.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="DisplayStaff.resx">
       <DependentUpon>DisplayStaff.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginDelete.resx">
+      <DependentUpon>LoginDelete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pay.resx">
+      <DependentUpon>Pay.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -77,6 +103,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ReviewBill.resx">
+      <DependentUpon>ReviewBill.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
