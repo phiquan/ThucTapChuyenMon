@@ -39,9 +39,8 @@ create table Food
 
 create table InforFood
 (
-	IDInforFood int PRIMARY KEY,
+	IDInforFood int IDENTITY(1,1) PRIMARY KEY,
 	IDFood int ,
-	Name nvarchar(50),
 	ID int,
 	Number int,
 
@@ -86,35 +85,28 @@ begin
 	INSERT INTO Staff Values('Vo Phi Quan','phiquan@gmail.com','123','Nam')
 
 	--Food--
-	INSERT INTO Food Values('001','combo1',79000)
-	INSERT INTO Food Values('002','combo2',79000)
-	INSERT INTO Food Values('003','combo3',79000)
-	INSERT INTO Food Values('101','Nước Ngọt',10000)
-	INSERT INTO Food Values('201','Gà cay',20000)
-	INSERT INTO Food Values('202','Gà không cay',20000)
+	INSERT INTO Food Values('1','combo1',79000)
+	INSERT INTO Food Values('2','combo2',129000)
+
+	
 
 	--InforFood--
-	INSERT INTO InforFood Values('0001','001','Gà miếng','00001',2)
-	INSERT INTO InforFood Values('0002','001','Nước ngọt','00003',1)
+	--combo1--
+	INSERT INTO InforFood Values(1,11,1)
+	INSERT INTO InforFood Values(1,13,1)
+	--combo2--
+	INSERT INTO InforFood Values(2,11,2)
+	INSERT INTO InforFood Values(2,12,1)
 
-	INSERT INTO InforFood Values('0003','002','Gà miếng','00001',3)
-	INSERT INTO InforFood Values('0004','002','Nước ngọt','00003',1)
-
-	INSERT INTO InforFood Values('0005','003','Gà miếng','00001',2)
-	INSERT INTO InforFood Values('0006','003','Nước ngọt','00003',2)
-	INSERT INTO InforFood Values('0007','003','Sandwich','00002',1)
-
-	INSERT INTO InforFood Values('0008','101','Nước ngọt','00003',1)
-
-	INSERT INTO InforFood Values('0009','201','Gà miếng','00001',1)
-
-	INSERT INTO InforFood Values('0010','202','Gà miếng','00001',1)
+	
 
 	--KHO--
-	INSERT INTO Kho Values('00001','Gà miếng',200)
-	INSERT INTO Kho Values('00002','Sandwich',30)
-	INSERT INTO Kho Values('00003','Nước ngọt',100)
+	INSERT INTO Kho Values('11','Gà miếng',500)
+	INSERT INTO Kho Values('12','Sandwich',200)
+	INSERT INTO Kho Values('13','Nước ngọt',400)
+	
 
 end
 
 
+SELECT * FROM Staff where Email='b'
