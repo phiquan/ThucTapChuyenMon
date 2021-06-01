@@ -37,5 +37,7 @@ namespace projectManager
         {
             return LoginDAO.Instance.LoginManager(user, pass);
         }
+
+        
     }
 }

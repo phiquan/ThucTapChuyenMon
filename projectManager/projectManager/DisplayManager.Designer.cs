@@ -352,6 +352,7 @@
             this.btnDelete.TabIndex = 8;
             this.btnDelete.Text = "Xóa";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnUpdate
             // 
@@ -361,6 +362,7 @@
             this.btnUpdate.TabIndex = 7;
             this.btnUpdate.Text = "Sửa";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnAdd
             // 
@@ -370,6 +372,7 @@
             this.btnAdd.TabIndex = 6;
             this.btnAdd.Text = "Thêm ";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // txtGender
             // 
@@ -389,25 +392,28 @@
             // 
             this.txtEmail.Location = new System.Drawing.Point(48, 194);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(252, 30);
+            this.txtEmail.Size = new System.Drawing.Size(281, 30);
             this.txtEmail.TabIndex = 3;
             // 
             // txtName
             // 
             this.txtName.Location = new System.Drawing.Point(48, 133);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(252, 30);
+            this.txtName.Size = new System.Drawing.Size(281, 30);
             this.txtName.TabIndex = 2;
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(19, 248);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.dataGridView1.Size = new System.Drawing.Size(972, 361);
             this.dataGridView1.TabIndex = 1;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // label1
             // 
@@ -560,6 +566,7 @@
             this.Controls.Add(this.tabControl1);
             this.Name = "DisplayManager";
             this.Text = "DisplayManager";
+            this.Load += new System.EventHandler(this.DisplayManager_Load);
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
             this.tabPage2.ResumeLayout(false);

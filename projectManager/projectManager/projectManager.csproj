@@ -54,6 +54,7 @@
     </Compile>
     <Compile Include="DAO\DataProvider.cs" />
     <Compile Include="DAO\LoginDAO.cs" />
+    <Compile Include="DAO\StaffDAO.cs" />
     <Compile Include="DisplayManager.cs">
       <SubType>Form</SubType>
     </Compile>

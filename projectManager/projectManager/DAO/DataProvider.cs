@@ -41,5 +41,18 @@ namespace projectManager.DAO
 
             return data;
         }
+
+        public void ExucuteNonQuery(string query)
+        {
+            SqlConnection conn = new SqlConnection(connStr);
+
+            conn.Open();
+
+            SqlCommand command = new SqlCommand(query, conn);
+
+            command.ExecuteNonQuery();
+
+            conn.Close();
+        }
     }
 }
