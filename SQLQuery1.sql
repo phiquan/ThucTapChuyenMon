@@ -48,6 +48,7 @@ create table InforFood
 	FOREIGN KEY (ID) REFERENCES Kho(ID)
 )
 
+
 create table InforBill
 (
 	IDInforBill int PRIMARY KEY,
@@ -98,8 +99,12 @@ begin
 	INSERT INTO InforFood Values(2,11,2)
 	INSERT INTO InforFood Values(2,12,1)
 
-	
+	INSERT INTO InforFood Values(3,11,2)
+	INSERT INTO InforFood Values(3,12,1)
 
+	
+	delete from InforFood where IDFood=3
+	delete from Food where IDFood=3
 	--KHO--
 	INSERT INTO Kho Values('11','Gà miếng',500)
 	INSERT INTO Kho Values('12','Sandwich',200)
@@ -110,3 +115,28 @@ end
 
 
 SELECT * FROM Staff where Email='b'
+
+select IDFood as 'Tên Sản Phẩm',ID as 'Tên Sản Phẩm Cấu Thành', Number as 'Số Lượng'
+from InforFood
+
+update Kho Set Number=450 Where ID=11
+update Kho Set Name=N'Nước ngọt' Where ID=13
+
+select NameFood as 'Tên Sản Phẩm',Name as 'Tên Sản Phẩm Cấu Thành',InforFood.Number as 'Số Lượng' from  Food, InforFood,  Kho where Food.IDFood = InforFood.IDFood and InforFood.ID = Kho.ID
+
+select * from Kho where ID=11
+
+Delete from Kho where ID=14
+
+select * 
+from InforFood, Kho
+where InforFood.ID=Kho.ID and Kho.ID=14
+
+Update Food Set NameFood=N'comb1', Price=69000 Where IDFood=1
+insert into Food values(3,'combo3',159000)
+
+
+select * 
+from InforFood
+where IDFood=2
+
