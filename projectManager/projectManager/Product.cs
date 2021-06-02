@@ -27,6 +27,8 @@ namespace projectManager
                 {
                     ProductDAO.Instance.Add(int.Parse(txtID.Text), txtName.Text, int.Parse(txtPrice.Text));
                     InforProduct ifp = new InforProduct();
+                    ifp.id = int.Parse(txtID.Text);
+                    ifp.nameProd = txtName.Text;
                     this.Hide();
                     ifp.ShowDialog();
                 }

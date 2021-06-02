@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,9 +19,9 @@ namespace projectManager.DAO
 
         private InforProductDAO() { }
 
-        public object InforProduct()
+        public object InforProduct(int id)
         {
-            string query = "select NameFood as 'Tên Sản Phẩm',Name as 'Tên Sản Phẩm Cấu Thành',InforFood.Number as 'Số Lượng' from  Food, InforFood,  Kho where Food.IDFood = InforFood.IDFood and InforFood.ID = Kho.ID";
+            string query = "select Kho.ID, NameFood as 'Tên Sản Phẩm',Name as 'Tên Sản Phẩm Cấu Thành',InforFood.Number as 'Số Lượng' from  Food, InforFood,  Kho where Food.IDFood = InforFood.IDFood and InforFood.ID = Kho.ID and Food.IDFood=" + id + "";
             return DataProvider.Instance.ExecuteQuery(query);
         }
 
@@ -36,12 +37,25 @@ namespace projectManager.DAO
             return DataProvider.Instance.ExecuteQuery(query);
         }
 
-        public object comboboxName()
+        public bool checkName(int id,int idKho)
         {
-            string query = "select * from Food";
-            return DataProvider.Instance.ExecuteQuery(query);
+            string query = "select * from InforFood where IDFood=" + id + " and ID=" + idKho + "";
+            DataTable result = DataProvider.Instance.ExecuteQuery(query);
+            return result.Rows.Count == 0;
         }
-        
+
+        public void Update(int id,int KhoOld,int idKho, int number)
+        {
+            string query = "update InforFood Set ID=" + idKho + ", Number=" + number + " Where ID=" + KhoOld + " and IDFood=" + id + "";
+            DataProvider.Instance.ExucuteNonQuery(query);
+        }
+
+        public void Delete(int id,int Kho)
+        {
+            string query = "delete from InforFood where IDFood=" + id + " and ID=" + Kho + "";
+            DataProvider.Instance.ExucuteNonQuery(query);
+        }
+
 
     }
 }

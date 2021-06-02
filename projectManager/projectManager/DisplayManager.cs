@@ -20,8 +20,12 @@ namespace projectManager
             btnFind.Enabled = false;
             btnUpdate.Enabled = false;
 
+            btnUpdateProduct.Enabled = false;
+            btnDeleteProduct.Enabled = false;
+
             btnUpdateProd.Enabled = false;
             btnDeleteProd.Enabled = false;
+            btnUpdateInfor.Enabled = false;
             
 
         }
@@ -191,6 +195,7 @@ namespace projectManager
 
                     btnDeleteProd.Enabled = true;
                     btnUpdateProd.Enabled = true;
+                    btnUpdateInfor.Enabled = true;
                 }
             }
             catch (Exception) { }
@@ -238,6 +243,8 @@ namespace projectManager
 
                     txtID.ReadOnly = true;
                     btnAddProduct.Enabled = false;
+                    btnUpdateProduct.Enabled = true;
+                    btnDeleteProduct.Enabled = true;
                 }
             }
             catch (Exception) { }
@@ -250,6 +257,8 @@ namespace projectManager
             txtNumber.Text = clear;
             txtID.ReadOnly = false;
             btnAddProduct.Enabled = true;
+            btnDeleteProduct.Enabled = false;
+            btnUpdateProduct.Enabled = false;
             
         }
 
@@ -266,6 +275,9 @@ namespace projectManager
                     WarehouseDAO.Instance.add(int.Parse(id), name, int.Parse(number));
                     dataGridView2.DataSource = WarehouseDAO.Instance.warehouse();
                     MessageBox.Show("Thêm thành công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    txtID.Text = clear;
+                    txtNameProd.Text = clear;
+                    txtNumber.Text = clear;
                 }
                 else
                 {
@@ -289,6 +301,9 @@ namespace projectManager
                 WarehouseDAO.Instance.Update(int.Parse(id), name, int.Parse(number));
                 dataGridView2.DataSource = WarehouseDAO.Instance.warehouse();
                 MessageBox.Show("Sửa thành công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtID.Text = clear;
+                txtNameProd.Text = clear;
+                txtNumber.Text = clear;
             }
             else
             {
@@ -303,6 +318,9 @@ namespace projectManager
                 WarehouseDAO.Instance.Delete(int.Parse(txtID.Text));
                 dataGridView2.DataSource = WarehouseDAO.Instance.warehouse();
                 MessageBox.Show("Xóa thành công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtID.Text = clear;
+                txtNameProd.Text = clear;
+                txtNumber.Text = clear;
             }
             else
             {
@@ -339,6 +357,15 @@ namespace projectManager
                 dataGridView3.DataSource = ProductDAO.Instance.product();
                 dataGridView3.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             }
+            
+        }
+
+        private void btnUpdateInfor_Click(object sender, EventArgs e)
+        {
+            InforProduct dis = new InforProduct();
+            dis.id = id;
+            dis.nameProd = nameProduct;
+            dis.ShowDialog();
             
         }
     }

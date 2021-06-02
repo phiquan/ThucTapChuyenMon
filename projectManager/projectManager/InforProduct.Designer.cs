@@ -38,7 +38,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.cbNameInfor = new System.Windows.Forms.ComboBox();
-            this.cbName = new System.Windows.Forms.ComboBox();
+            this.txtName = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -46,7 +46,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Times New Roman", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(33, 9);
+            this.label6.Location = new System.Drawing.Point(22, 9);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(586, 55);
             this.label6.TabIndex = 3;
@@ -92,6 +92,7 @@
             this.btnUpdate.TabIndex = 11;
             this.btnUpdate.Text = "Sửa";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnAdd
             // 
@@ -102,6 +103,7 @@
             this.btnAdd.TabIndex = 12;
             this.btnAdd.Text = "Thêm";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnDelete
             // 
@@ -112,6 +114,7 @@
             this.btnDelete.TabIndex = 13;
             this.btnDelete.Text = "Xóa";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // label2
             // 
@@ -142,21 +145,20 @@
             this.cbNameInfor.Size = new System.Drawing.Size(251, 30);
             this.cbNameInfor.TabIndex = 16;
             // 
-            // cbName
+            // txtName
             // 
-            this.cbName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbName.FormattingEnabled = true;
-            this.cbName.Location = new System.Drawing.Point(16, 362);
-            this.cbName.Name = "cbName";
-            this.cbName.Size = new System.Drawing.Size(212, 30);
-            this.cbName.TabIndex = 17;
+            this.txtName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtName.Location = new System.Drawing.Point(16, 362);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(212, 30);
+            this.txtName.TabIndex = 17;
             // 
             // InforProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(670, 475);
-            this.Controls.Add(this.cbName);
+            this.Controls.Add(this.txtName);
             this.Controls.Add(this.cbNameInfor);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -189,6 +191,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cbNameInfor;
-        private System.Windows.Forms.ComboBox cbName;
+        private System.Windows.Forms.TextBox txtName;
     }
 }

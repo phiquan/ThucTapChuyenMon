@@ -65,6 +65,7 @@
             this.btnAddProd = new System.Windows.Forms.Button();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.label16 = new System.Windows.Forms.Label();
+            this.btnUpdateInfor = new System.Windows.Forms.Button();
             this.tabPage3.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -400,6 +401,7 @@
             // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.btnUpdateInfor);
             this.tabPage4.Controls.Add(this.btnDeleteProd);
             this.tabPage4.Controls.Add(this.btnUpdateProd);
             this.tabPage4.Controls.Add(this.btnAddProd);
@@ -415,7 +417,7 @@
             // 
             // btnDeleteProd
             // 
-            this.btnDeleteProd.Location = new System.Drawing.Point(665, 540);
+            this.btnDeleteProd.Location = new System.Drawing.Point(783, 540);
             this.btnDeleteProd.Name = "btnDeleteProd";
             this.btnDeleteProd.Size = new System.Drawing.Size(160, 45);
             this.btnDeleteProd.TabIndex = 13;
@@ -425,7 +427,7 @@
             // 
             // btnUpdateProd
             // 
-            this.btnUpdateProd.Location = new System.Drawing.Point(403, 540);
+            this.btnUpdateProd.Location = new System.Drawing.Point(318, 540);
             this.btnUpdateProd.Name = "btnUpdateProd";
             this.btnUpdateProd.Size = new System.Drawing.Size(160, 45);
             this.btnUpdateProd.TabIndex = 12;
@@ -435,7 +437,7 @@
             // 
             // btnAddProd
             // 
-            this.btnAddProd.Location = new System.Drawing.Point(138, 540);
+            this.btnAddProd.Location = new System.Drawing.Point(90, 540);
             this.btnAddProd.Name = "btnAddProd";
             this.btnAddProd.Size = new System.Drawing.Size(160, 45);
             this.btnAddProd.TabIndex = 11;
@@ -464,6 +466,16 @@
             this.label16.Size = new System.Drawing.Size(423, 55);
             this.label16.TabIndex = 2;
             this.label16.Text = "Thông Tin Sản Phẩm";
+            // 
+            // btnUpdateInfor
+            // 
+            this.btnUpdateInfor.Location = new System.Drawing.Point(554, 540);
+            this.btnUpdateInfor.Name = "btnUpdateInfor";
+            this.btnUpdateInfor.Size = new System.Drawing.Size(160, 45);
+            this.btnUpdateInfor.TabIndex = 14;
+            this.btnUpdateInfor.Text = "Sửa Chi Tiết";
+            this.btnUpdateInfor.UseVisualStyleBackColor = true;
+            this.btnUpdateInfor.Click += new System.EventHandler(this.btnUpdateInfor_Click);
             // 
             // DisplayManager
             // 
@@ -530,5 +542,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button btnUpdateInfor;
     }
 }
