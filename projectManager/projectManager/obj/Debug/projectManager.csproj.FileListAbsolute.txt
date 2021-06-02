@@ -8,4 +8,6 @@ D:\Git TTCM\ThucTapChuyenMon\projectManager\projectManager\obj\Debug\projectMana
 D:\Git TTCM\ThucTapChuyenMon\projectManager\projectManager\obj\Debug\projectManager.csproj.GenerateResource.cache
 D:\Git TTCM\ThucTapChuyenMon\projectManager\projectManager\obj\Debug\projectManager.exe
 D:\Git TTCM\ThucTapChuyenMon\projectManager\projectManager\obj\Debug\projectManager.pdb
-D:\Git TTCM\ThucTapChuyenMon\projectManager\projectManager\obj\Debug\projectManager.AddProduct.resources
+D:\Git TTCM\ThucTapChuyenMon\projectManager\projectManager\obj\Debug\projectManager.InforProduct.resources
+D:\Git TTCM\ThucTapChuyenMon\projectManager\projectManager\obj\Debug\projectManager.Product.resources
+D:\Git TTCM\ThucTapChuyenMon\projectManager\projectManager\obj\Debug\projectManager.ProductUpdate.resources

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using project.DAO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,7 +16,7 @@ namespace project
         public DisplayStaff()
         {
             InitializeComponent();
-            button1.Enabled = false;
+            btnAdd.Enabled = false;
             button2.Enabled = false;
         }
 
@@ -33,14 +34,14 @@ namespace project
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            button1.Enabled = true;
+            btnAdd.Enabled = true;
             button2.Enabled = false;
             dataGridView2.ClearSelection();
         }
 
         private void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            button1.Enabled = false;
+            btnAdd.Enabled = false;
             button2.Enabled = true;
             dataGridView1.ClearSelection();
         }
@@ -69,10 +70,7 @@ namespace project
             }
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
+        
 
         private void btnSeeRevenue_Click(object sender, EventArgs e)
         {
@@ -86,6 +84,11 @@ namespace project
             Pay pay = new Pay();
             this.Hide();
             pay.ShowDialog();
+        }
+
+        private void DisplayStaff_Load(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = DisplaySatffDAO.Instance.menu();
         }
     }
 }

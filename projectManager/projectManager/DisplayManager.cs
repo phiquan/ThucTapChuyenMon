@@ -20,23 +20,18 @@ namespace projectManager
             btnFind.Enabled = false;
             btnUpdate.Enabled = false;
 
-            btnAddProd.Enabled = false;
             btnUpdateProd.Enabled = false;
             btnDeleteProd.Enabled = false;
-            btnClear.Enabled = false;
+            
 
         }
 
         private int id;
         private string clear = string.Empty;
 
-        private void btnAddProd_Click(object sender, EventArgs e)
-        {
-            AddProduct add = new AddProduct();
-            add.Show();
-        }
+        
 
-        private void DisplayManager_Load(object sender, EventArgs e)
+        public void DisplayManager_Load(object sender, EventArgs e)
         {
             //Staff
             dataGridView1.DataSource = StaffDAO.Instance.staff();
@@ -44,8 +39,19 @@ namespace projectManager
             dataGridView1.Columns[0].Width = 70;
             dataGridView1.Columns[3].Width = 70;
             dataGridView1.Columns[4].Width = 80;
+
+            //Warehouse
+            dataGridView2.DataSource = WarehouseDAO.Instance.warehouse();
+            dataGridView2.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+           
+
+            //Product
+            dataGridView3.DataSource = ProductDAO.Instance.product();
+            dataGridView3.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            
+
         }
-        
+
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             try
@@ -92,20 +98,28 @@ namespace projectManager
             string email = txtEmail.Text;
             string pass = txtPass.Text;
             string gender = txtGender.Text;
-            if(name != null || email != null || pass != null || gender != null)
+            if(name != "" && email != "" && pass != "" && gender != "")
             {
-                StaffDAO.Instance.Update(id, name, email, pass, gender);
-                dataGridView1.DataSource = StaffDAO.Instance.staff();
-                MessageBox.Show("Update thông tin thành công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (StaffDAO.Instance.checkAdd(email))
+                {
+                    StaffDAO.Instance.Update(id, name, email, pass, gender);
+                    dataGridView1.DataSource = StaffDAO.Instance.staff();
+                    MessageBox.Show("Update thông tin thành công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                txtName.Text = clear;
-                txtEmail.Text = clear;
-                txtPass.Text = clear;
-                txtGender.Text = clear;
+                    txtName.Text = clear;
+                    txtEmail.Text = clear;
+                    txtPass.Text = clear;
+                    txtGender.Text = clear;
 
-                btnDelete.Enabled = false;
-                btnFind.Enabled = false;
-                btnUpdate.Enabled = false;
+                    btnDelete.Enabled = false;
+                    btnFind.Enabled = false;
+                    btnUpdate.Enabled = false;
+                }
+                else
+                {
+                    MessageBox.Show("Email đã tồn tại", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                
             }
             else
             {
@@ -121,7 +135,7 @@ namespace projectManager
             string pass = txtPass.Text;
             string gender = txtGender.Text;
 
-            if (name != null || email != null || pass != null || gender != null)
+            if (name != "" && email != "" && pass != "" && gender != "")
             {
                 if (StaffDAO.Instance.checkAdd(email))
                 {
@@ -149,6 +163,183 @@ namespace projectManager
                 MessageBox.Show("Bạn không được bỏ trống", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
+        }
+
+        //Chưa xong 
+        private void btnFind_Click(object sender, EventArgs e)
+        {
+            string name = txtName.Text + "#";
+            string email = txtEmail.Text + "#";
+            string pass = txtPass.Text + "#";
+            string gender = txtGender.Text;
+            string chuoi = name + email + pass + gender;
+        }
+
+        public string nameProduct;
+        public int priceProdct;
+
+        private void dataGridView3_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                if (e.RowIndex >= 0)
+                {
+                    DataGridViewRow row = this.dataGridView3.Rows[e.RowIndex];
+                    id = int.Parse(row.Cells[0].Value.ToString());
+                    nameProduct = row.Cells[1].Value.ToString();
+                    priceProdct = int.Parse(row.Cells[2].Value.ToString());
+
+                    btnDeleteProd.Enabled = true;
+                    btnUpdateProd.Enabled = true;
+                }
+            }
+            catch (Exception) { }
+        }
+
+        private void btnUpdateProd_Click(object sender, EventArgs e)
+        {
+            ProductUpdate prodUpdate = new ProductUpdate();
+            prodUpdate.id = id;
+            prodUpdate.name = nameProduct;
+            prodUpdate.price = priceProdct;
+            prodUpdate.ShowDialog();
+            dataGridView3.DataSource = ProductDAO.Instance.product();
+            dataGridView3.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            btnUpdateProd.Enabled = false;
+            btnDeleteProd.Enabled = false;
+        }
+
+        private void btnAddProd_Click(object sender, EventArgs e)
+        {
+            Product add = new Product();
+            add.ShowDialog();
+            dataGridView3.DataSource = ProductDAO.Instance.product();
+            dataGridView3.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            btnUpdateProd.Enabled = false;
+            btnDeleteProd.Enabled = false;
+        }
+
+        private void btnLoad_Click(object sender, EventArgs e)
+        {
+            dataGridView2.DataSource = WarehouseDAO.Instance.warehouse();
+            dataGridView2.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+        }
+
+        private void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                if (e.RowIndex >= 0)
+                {
+                    DataGridViewRow row = this.dataGridView2.Rows[e.RowIndex];
+                    txtID.Text = row.Cells[0].Value.ToString();
+                    txtNameProd.Text = row.Cells[1].Value.ToString();
+                    txtNumber.Text = row.Cells[2].Value.ToString();
+
+                    txtID.ReadOnly = true;
+                    btnAddProduct.Enabled = false;
+                }
+            }
+            catch (Exception) { }
+        }
+
+        private void tabPage2_Click(object sender, EventArgs e)
+        {
+            txtID.Text = clear;
+            txtNameProd.Text = clear;
+            txtNumber.Text = clear;
+            txtID.ReadOnly = false;
+            btnAddProduct.Enabled = true;
+            
+        }
+
+        private void btnAddProduct_Click(object sender, EventArgs e)
+        {
+            string id = txtID.Text;
+            string name = txtNameProd.Text;
+            string number = txtNumber.Text;
+
+            if(id != "" && name != "" && number != "")
+            {
+                if (WarehouseDAO.Instance.checkId(int.Parse(id)))
+                {
+                    WarehouseDAO.Instance.add(int.Parse(id), name, int.Parse(number));
+                    dataGridView2.DataSource = WarehouseDAO.Instance.warehouse();
+                    MessageBox.Show("Thêm thành công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("ID đã tồn tại, vui lòng chọn ID khác", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Không được bỏ trống", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void btnUpdateProduct_Click(object sender, EventArgs e)
+        {
+            string id = txtID.Text;
+            string name = txtNameProd.Text;
+            string number = txtNumber.Text;
+
+            if (id != "" && name != "" && number != "")
+            {
+                WarehouseDAO.Instance.Update(int.Parse(id), name, int.Parse(number));
+                dataGridView2.DataSource = WarehouseDAO.Instance.warehouse();
+                MessageBox.Show("Sửa thành công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng không bỏ trống", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void btnDeleteProduct_Click(object sender, EventArgs e)
+        {
+            if (WarehouseDAO.Instance.checkFood(int.Parse(txtID.Text)))
+            {
+                WarehouseDAO.Instance.Delete(int.Parse(txtID.Text));
+                dataGridView2.DataSource = WarehouseDAO.Instance.warehouse();
+                MessageBox.Show("Xóa thành công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Sản phẩm này còn bán,Vui lòng không được xóa", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void txtID_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+            e.Handled = true;
+            if (e.Handled)
+            {
+                MessageBox.Show("Bạn phải nhâp số","Thông Báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
+            }
+        }
+
+        private void txtNumber_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+            e.Handled = true;
+            if (e.Handled)
+            {
+                MessageBox.Show("Bạn phải nhâp số", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void btnDeleteProd_Click(object sender, EventArgs e)
+        {
+            var mess = MessageBox.Show("Bạn có muốn xóa sản phẩm này", "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            if(mess == DialogResult.Yes)
+            {
+                ProductDAO.Instance.Delete(id);
+                dataGridView3.DataSource = ProductDAO.Instance.product();
+                dataGridView3.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            }
+            
         }
     }
 }

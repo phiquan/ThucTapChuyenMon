@@ -34,13 +34,13 @@ namespace projectManager.DAO
 
         public void Update(int id, string name, string email, string pass, string gender)
         {
-            string query = "Update Staff Set NameStaff='" + name + "' , Email='" + email + "' , Pass='" + pass + "' , Gender='" + gender + "' Where IDStaff=" + id + "";
+            string query = "Update Staff Set NameStaff=N'" + name + "' , Email='" + email + "' , Pass='" + pass + "' , Gender='" + gender + "' Where IDStaff=" + id + "";
             DataProvider.Instance.ExucuteNonQuery(query);
         }
 
         public void Add(string name, string email, string pass, string gender)
         {           
-            string query = "Insert into Staff values('" + name + "','" + email + "','" + pass + "','" + gender + "')";
+            string query = "Insert into Staff values(N'" + name + "','" + email + "','" + pass + "','" + gender + "')";
             DataProvider.Instance.ExucuteNonQuery(query);
         }
 
