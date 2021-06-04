@@ -51,23 +51,27 @@ create table InforFood
 
 create table InforBill
 (
-	IDInforBill int PRIMARY KEY,
+	IDInforBill int IDENTITY(1,1) PRIMARY KEY,
 	IDFood int,
+	IDBill int,
+	Number int,
+	
 
+	FOREIGN KEY(IDBill) REFERENCES Bill(IDBill),
 	FOREIGN KEY(IDFood) REFERENCES Food(IDFood)
 )
 
 create table Bill
 (
-	IDBill int PRIMARY KEY,
+	IDBill int IDENTITY(1,1) PRIMARY KEY,
 	IDStaff int,
 	DateBill date,
-	IDInforBill int,
+	TimeBill time,
 	TotalPrice int,
-
-	FOREIGN KEY (IDInforBill) REFERENCES InforBill(IDInforBill),
 	FOREIGN KEY (IDStaff) REFERENCES Staff(IDStaff)
 )
+
+
 
 create table Kho
 (
@@ -76,6 +80,10 @@ create table Kho
 	Number int,
 )
 
+
+
+
+--test SQL
 begin
 
 		--Manager--
@@ -113,30 +121,119 @@ begin
 
 end
 
+--test SQL
+begin
 
-SELECT * FROM Staff where Email='b'
+	SELECT * FROM Staff where Email='b'
 
-select IDFood as 'Tên Sản Phẩm',ID as 'Tên Sản Phẩm Cấu Thành', Number as 'Số Lượng'
-from InforFood
+	select IDFood as 'Tên Sản Phẩm',ID as 'Tên Sản Phẩm Cấu Thành', Number as 'Số Lượng'
+	from InforFood
 
-update Kho Set Number=450 Where ID=11
-update Kho Set Name=N'Nước ngọt' Where ID=13
+	update Kho Set Number=450 Where ID=11
+	update Kho Set Name=N'Nước ngọt' Where ID=13
 
-select NameFood as 'Tên Sản Phẩm',Name as 'Tên Sản Phẩm Cấu Thành',InforFood.Number as 'Số Lượng' from  Food, InforFood,  Kho where Food.IDFood = InforFood.IDFood and InforFood.ID = Kho.ID
+	select Kho.ID ,NameFood as 'Tên Sản Phẩm',Name as 'Tên Sản Phẩm Cấu Thành',InforFood.Number as 'Số Lượng' 
+	from  Food, InforFood,  Kho 
+	where Food.IDFood = InforFood.IDFood and InforFood.ID = Kho.ID and Food.IDFood=2
 
-select * from Kho where ID=11
+	select * from Kho where ID=11
 
-Delete from Kho where ID=14
+	Delete from Kho where ID=14
 
-select * 
-from InforFood, Kho
-where InforFood.ID=Kho.ID and Kho.ID=14
+	select * 
+	from InforFood, Kho
+	where InforFood.ID=Kho.ID and Kho.ID=14
 
-Update Food Set NameFood=N'comb1', Price=69000 Where IDFood=1
-insert into Food values(3,'combo3',159000)
+	Update Food Set NameFood=N'comb1', Price=69000 Where IDFood=1
+	insert into Food values(3,'combo3',159000)
 
 
-select * 
-from InforFood
-where IDFood=2
+	select * 
+	from InforFood
+	where IDFood=2
 
+	select ID 
+	from Kho
+	where Name=N'Gà miếng'
+
+	insert into InforFood values(1,11,2)
+
+	delete from InforFood where IDFood=2
+
+	select *from InforFood where IDFood=2 and ID=14
+
+
+	update InforFood Set ID=11, Number=3 Where ID=12 and IDFood=2
+	delete from InforFood where IDFood=3 and ID=11
+
+	create table test
+	(
+		id int PRIMARY KEY,
+		name nvarchar(50),
+		price int,
+		ngay date,
+		gio time
+	)
+
+	insert into test(id,name,ngay,gio) values(3,'quan','2022/06/03','21:53:05')
+	update test set price=10 where id=1
+	drop table test
+	select * from test
+
+	select * from Staff where Email='phiquan@gmail.com'and pass='123'
+
+	select * from test where name='quan' and ngay='2021/06/03'and gio>'22:00:00'
+
+	select * from InforBill
+
+	drop table InforBill
+	drop table Bill
+
+	select Food.IDFood, Food.NameFood, SUM(Food.Price) as 'Thành Tiền', SUM(Number) as N'Số Lượng'
+	from InforBill, Food
+	where IDBill=InForBill.IDBill and InforBill.IDFood=Food.IDFood and IDBill=1
+	Group By Food.NameFood , Food.Price, Food.IDFood
+
+	select SUM(Food.Price) as 'Thành Tiền'
+	from InforBill,Food
+	where InforBill.IDFood=Food.IDFood and IDBill=1
+	Group By IDBill
+
+	select
+
+
+	insert into InforBill values(1,1,1)
+	insert into InforBill values(2,1)
+	insert into InforBill values(3,1)
+
+	select * from Food
+
+	select * from Bill
+	insert into Bill values(7,'2020/06/04','12:00:00',120000)
+
+	insert into Bill values(7,'2020/06/04','13:00:00',120000)
+
+	insert into Bill values(7,'2020/06/04','14:00:00',120000)
+
+	insert into Bill values(7,'2020/06/04','15:00:00',120000)
+
+	insert into Bill values(7,'2020/06/04','16:00:00',120000)
+
+	insert into Bill values(7,'2020/05/04','16:00:00',120000)
+
+	insert into Bill(IDStaff,DateBill,TimeBill) values(7,'2021/06/04','12:39:00')
+
+	insert into Bill(IDStaff,DateBill,TimeBill) values(7,'2021/06/04','13:24:00')
+
+	select *
+	from Bill
+	Where DateBill = '2021/06/04' and TimeBill = '13:24:00'
+
+
+	update Bill set TotalPrice=129000 where IDStaff=7 and DateBill='2021/06/04' and TimeBill='12:39:00'
+
+	select * from Bill where IDStaff=7 and DateBill='2021/06/04' and TimeBill>=''
+
+	delete from InforBill where IDBill=8
+	delete from Bill where IDBill=8
+end
