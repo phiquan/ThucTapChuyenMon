@@ -25,5 +25,23 @@ namespace project.DAO
             DataTable result = DataProvider.Instance.ExecuteQuery(query);
             return result.Rows.Count > 0;
         }
+
+        public string getName(string user)
+        {
+            string query = "select * from Staff where Email=N'" + user + "'";
+            DataTable result = DataProvider.Instance.ExecuteQuery(query);
+            string fullname = result.Rows[0].ItemArray[1].ToString();
+            return fullname;
+        } 
+
+        public string getId(string user)
+        {
+            string query = "select * from Staff where Email=N'" + user + "'";
+            DataTable result = DataProvider.Instance.ExecuteQuery(query);
+            string id = result.Rows[0].ItemArray[0].ToString();
+            return id;
+        }
+
+        
     }
 }

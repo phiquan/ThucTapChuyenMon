@@ -39,9 +39,9 @@
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(130, 19);
+            this.label1.Location = new System.Drawing.Point(112, 28);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(321, 36);
+            this.label1.Size = new System.Drawing.Size(351, 43);
             this.label1.TabIndex = 0;
             this.label1.Text = "Đăng Nhập Nhân Viên";
             // 
@@ -80,6 +80,7 @@
             this.txtPass.Location = new System.Drawing.Point(272, 157);
             this.txtPass.Multiline = true;
             this.txtPass.Name = "txtPass";
+            this.txtPass.PasswordChar = '*';
             this.txtPass.Size = new System.Drawing.Size(191, 27);
             this.txtPass.TabIndex = 4;
             // 
@@ -108,8 +109,8 @@
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "Login";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Login_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 

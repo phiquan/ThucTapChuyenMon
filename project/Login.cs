@@ -13,6 +13,7 @@ namespace project
 {
     public partial class Login : Form
     {
+       
         public Login()
         {
             InitializeComponent();
@@ -21,34 +22,41 @@ namespace project
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-           
+            
             string userName = txtID.Text;
             string pass = txtPass.Text;
             if (Login1(userName, pass))
             {
                 DisplayStaff d = new DisplayStaff();
                 this.Hide();
+                d.name.Text = fullname(userName);
+                d.time = DateTime.Now.ToString("hh:mm:ss");
+                d.email = txtID.Text;
+                d.id = idStaff(userName);
                 d.ShowDialog();
+                
             }
-            else
+            else  
             {
                 MessageBox.Show("Tên đăng nhập hoặc tài khoản không hợp lệ, Xin vui lòng nhập lại","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Warning);
             }
         }
 
         bool Login1(string userName, string pass)
-        {
+        {       
             return LoginDAO.Instance.Login(userName, pass);
         }
 
-        private void Login_FormClosed(object sender, FormClosedEventArgs e)
+        string fullname(string username)
         {
-
-            DialogResult close = MessageBox.Show("Bạn có muốn thoát khỏi chương trình ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-            if (close == DialogResult.Yes)
-            {
-                Application.Exit();
-            }
+            return LoginDAO.Instance.getName(username);
         }
+
+        string idStaff(string username)
+        {
+            return LoginDAO.Instance.getId(username);
+        }
+
+        
     }
 }

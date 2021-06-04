@@ -17,6 +17,7 @@ namespace project
         {
             InitializeComponent();
         }
+        public int id;
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
@@ -24,12 +25,9 @@ namespace project
             string pass = txtPass.Text;
             if (Login(userName, pass))
             {
-                //Lệnh Xóa
-
-                this.Hide();
+                LoginDeleteDAO.Instance.DeleteBill(id);
                 MessageBox.Show("Xóa Thành Công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                
-                
+                this.Hide();           
             }
             else
             {
@@ -43,6 +41,11 @@ namespace project
             return LoginDeleteDAO.Instance.Login(userName, pass);
         }
 
-        
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            ReviewBill rv = new ReviewBill();
+            this.Hide();
+            rv.ShowDialog();
+        }
     }
 }

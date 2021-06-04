@@ -42,18 +42,17 @@ namespace project.DAO
             return data;
         }
 
-        public int ExecuteNonQuery(string query)
+        public void ExecuteNonQuery(string query)
         {
-            int data = 0;
+            SqlConnection connection = new SqlConnection(connStr);
 
-            using (SqlConnection connection = new SqlConnection(connStr))
-            {
-                connection.Open();
-                SqlCommand command = new SqlCommand(query, connection);
-                data = command.ExecuteNonQuery();
-                connection.Close();
-            }
-            return data;
+            connection.Open();
+
+            SqlCommand command = new SqlCommand(query, connection);
+
+            command.ExecuteNonQuery();
+
+            connection.Close();
         }
     }
 }

@@ -60,12 +60,12 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.btnUpdateInfor = new System.Windows.Forms.Button();
             this.btnDeleteProd = new System.Windows.Forms.Button();
             this.btnUpdateProd = new System.Windows.Forms.Button();
             this.btnAddProd = new System.Windows.Forms.Button();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.label16 = new System.Windows.Forms.Label();
-            this.btnUpdateInfor = new System.Windows.Forms.Button();
             this.tabPage3.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -219,6 +219,7 @@
             this.dataGridView2.RowHeadersWidth = 51;
             this.dataGridView2.RowTemplate.Height = 24;
             this.dataGridView2.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView2.Size = new System.Drawing.Size(595, 482);
             this.dataGridView2.TabIndex = 2;
             this.dataGridView2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellClick);
@@ -375,6 +376,7 @@
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(281, 30);
             this.txtName.TabIndex = 2;
+            this.txtName.TextChanged += new System.EventHandler(this.txtName_TextChanged);
             // 
             // dataGridView1
             // 
@@ -385,6 +387,7 @@
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(972, 361);
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
@@ -414,6 +417,16 @@
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Sẩn Phẩm";
             this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // btnUpdateInfor
+            // 
+            this.btnUpdateInfor.Location = new System.Drawing.Point(554, 540);
+            this.btnUpdateInfor.Name = "btnUpdateInfor";
+            this.btnUpdateInfor.Size = new System.Drawing.Size(160, 45);
+            this.btnUpdateInfor.TabIndex = 14;
+            this.btnUpdateInfor.Text = "Sửa Chi Tiết";
+            this.btnUpdateInfor.UseVisualStyleBackColor = true;
+            this.btnUpdateInfor.Click += new System.EventHandler(this.btnUpdateInfor_Click);
             // 
             // btnDeleteProd
             // 
@@ -453,6 +466,7 @@
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.RowHeadersWidth = 51;
             this.dataGridView3.RowTemplate.Height = 24;
+            this.dataGridView3.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView3.Size = new System.Drawing.Size(997, 428);
             this.dataGridView3.TabIndex = 3;
             this.dataGridView3.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView3_CellClick);
@@ -466,16 +480,6 @@
             this.label16.Size = new System.Drawing.Size(423, 55);
             this.label16.TabIndex = 2;
             this.label16.Text = "Thông Tin Sản Phẩm";
-            // 
-            // btnUpdateInfor
-            // 
-            this.btnUpdateInfor.Location = new System.Drawing.Point(554, 540);
-            this.btnUpdateInfor.Name = "btnUpdateInfor";
-            this.btnUpdateInfor.Size = new System.Drawing.Size(160, 45);
-            this.btnUpdateInfor.TabIndex = 14;
-            this.btnUpdateInfor.Text = "Sửa Chi Tiết";
-            this.btnUpdateInfor.UseVisualStyleBackColor = true;
-            this.btnUpdateInfor.Click += new System.EventHandler(this.btnUpdateInfor_Click);
             // 
             // DisplayManager
             // 

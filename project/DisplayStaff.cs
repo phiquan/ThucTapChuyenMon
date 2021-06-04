@@ -13,82 +13,53 @@ namespace project
 {
     public partial class DisplayStaff : Form
     {
+        public Label name { get { return this.lbNameStaff; } }
+        public string time;
+        public string email;
+        public string id;
+
         public DisplayStaff()
         {
             InitializeComponent();
-            btnAdd.Enabled = false;
-            button2.Enabled = false;
         }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            for(int i = 1; i < dataGridView1.Rows.Count; i++)
-            {
-                if(dataGridView1.Rows[i].Selected == true)
-                {
-                    DataGridViewRow row = this.dataGridView1.Rows[i];
-                    this.dataGridView2.Rows.Add(row);
-                }
-            }
-        }
-
-        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            btnAdd.Enabled = true;
-            button2.Enabled = false;
-            dataGridView2.ClearSelection();
-        }
-
-        private void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            btnAdd.Enabled = false;
-            button2.Enabled = true;
-            dataGridView1.ClearSelection();
-        }
-
-        private void DisplayStaff_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            var close = MessageBox.Show("Do you want to exit this program ?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-            if(close == DialogResult.Yes)
-            {
-                Environment.Exit(1);
-            }
-            else
-            {
-
-            }
-        }
-
+        
         private void btnLogout_Click(object sender, EventArgs e)
         {
-            var logout = MessageBox.Show("Bạn có muốn đăng xuất", "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-            if(logout == DialogResult.Yes)
-            {
-                Login lg = new Login();
-                this.Hide();
-                lg.ShowDialog();
-            }
+            Login lg = new Login();
+            this.Hide();
+            lg.ShowDialog();
         }
-
-        
 
         private void btnSeeRevenue_Click(object sender, EventArgs e)
         {
-            ReviewBill rb = new ReviewBill();
+            ReviewBill rv = new ReviewBill();
             this.Hide();
-            rb.ShowDialog();
+
+            rv.id = id;
+            rv.time = time;
+            rv.date = DateTime.Now.ToString("yyyy/MM/dd");
+
+            rv.ShowDialog();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void btnCreateBill_Click(object sender, EventArgs e)
         {
-            Pay pay = new Pay();
+            string timeCreate = DateTime.Now.ToString("hh:mm:ss");
+            DisplayStaffDAO.Instance.createBill(int.Parse(id), lbDate.Text, timeCreate);
+            DisplayMenu disM = new DisplayMenu();
+            disM.id = id;
+            disM.time = timeCreate;
+            disM.timeStaff = time;
+            disM.idBill = DisplayStaffDAO.Instance.getIdBill(lbDate.Text, timeCreate);
             this.Hide();
-            pay.ShowDialog();
+            disM.ShowDialog();
+
         }
 
         private void DisplayStaff_Load(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = DisplaySatffDAO.Instance.menu();
+            lbDate.Text = DateTime.Now.ToString("yyyy/MM/dd");
         }
+        
     }
 }

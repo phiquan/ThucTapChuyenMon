@@ -40,19 +40,20 @@ namespace projectManager
             //Staff
             dataGridView1.DataSource = StaffDAO.Instance.staff();
             dataGridView1.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridView1.Columns[0].Width = 70;
-            dataGridView1.Columns[3].Width = 70;
+            dataGridView1.Columns[0].Visible = false;
+            dataGridView1.Columns[3].Visible = false;
             dataGridView1.Columns[4].Width = 80;
+            dataGridView1.ClearSelection();
 
             //Warehouse
             dataGridView2.DataSource = WarehouseDAO.Instance.warehouse();
             dataGridView2.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-           
+            dataGridView2.ClearSelection();
 
             //Product
             dataGridView3.DataSource = ProductDAO.Instance.product();
             dataGridView3.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            
+            dataGridView3.ClearSelection();
 
         }
 
@@ -350,12 +351,19 @@ namespace projectManager
 
         private void btnDeleteProd_Click(object sender, EventArgs e)
         {
-            var mess = MessageBox.Show("Bạn có muốn xóa sản phẩm này", "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-            if(mess == DialogResult.Yes)
+            try
             {
-                ProductDAO.Instance.Delete(id);
-                dataGridView3.DataSource = ProductDAO.Instance.product();
-                dataGridView3.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                var mess = MessageBox.Show("Bạn có muốn xóa sản phẩm này", "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                if (mess == DialogResult.Yes)
+                {
+                    ProductDAO.Instance.Delete(id);
+                    dataGridView3.DataSource = ProductDAO.Instance.product();
+                    dataGridView3.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Sản phẩm đã được bán không xóa được", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             
         }
@@ -367,6 +375,18 @@ namespace projectManager
             dis.nameProd = nameProduct;
             dis.ShowDialog();
             
+        }
+
+        private void txtName_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtName.Text))
+            {
+                (dataGridView1.DataSource as DataTable).DefaultView.RowFilter = string.Empty;
+            }
+            else
+            {
+                (dataGridView1.DataSource as DataTable).DefaultView.RowFilter = string.Format("NameStaff LIKE '{0}%'", txtName.Text);
+            }
         }
     }
 }

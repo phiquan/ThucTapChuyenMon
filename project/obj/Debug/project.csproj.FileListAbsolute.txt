@@ -8,6 +8,6 @@ D:\Git TTCM\ThucTapChuyenMon\project\obj\Debug\project.Properties.Resources.reso
 D:\Git TTCM\ThucTapChuyenMon\project\obj\Debug\project.csproj.GenerateResource.cache
 D:\Git TTCM\ThucTapChuyenMon\project\obj\Debug\project.exe
 D:\Git TTCM\ThucTapChuyenMon\project\obj\Debug\project.pdb
-D:\Git TTCM\ThucTapChuyenMon\project\obj\Debug\project.Pay.resources
 D:\Git TTCM\ThucTapChuyenMon\project\obj\Debug\project.ReviewBill.resources
 D:\Git TTCM\ThucTapChuyenMon\project\obj\Debug\project.LoginDelete.resources
+D:\Git TTCM\ThucTapChuyenMon\project\obj\Debug\project.DisplayMenu.resources

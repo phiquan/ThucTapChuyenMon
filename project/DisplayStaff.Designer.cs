@@ -28,121 +28,88 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnLogout = new System.Windows.Forms.Button();
             this.btnSeeRevenue = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.btnAdd = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            this.btnLogout = new System.Windows.Forms.Button();
+            this.btnCreateBill = new System.Windows.Forms.Button();
+            this.lbNameStaff = new System.Windows.Forms.Label();
+            this.lbDate = new System.Windows.Forms.Label();
             this.SuspendLayout();
-            // 
-            // btnLogout
-            // 
-            this.btnLogout.Location = new System.Drawing.Point(1065, 303);
-            this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(110, 73);
-            this.btnLogout.TabIndex = 1;
-            this.btnLogout.Text = "Đăng Xuất";
-            this.btnLogout.UseVisualStyleBackColor = true;
-            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // btnSeeRevenue
             // 
-            this.btnSeeRevenue.Location = new System.Drawing.Point(1065, 202);
+            this.btnSeeRevenue.Location = new System.Drawing.Point(360, 171);
             this.btnSeeRevenue.Name = "btnSeeRevenue";
             this.btnSeeRevenue.Size = new System.Drawing.Size(110, 73);
-            this.btnSeeRevenue.TabIndex = 2;
+            this.btnSeeRevenue.TabIndex = 3;
             this.btnSeeRevenue.Text = "Xem Lại Bill";
             this.btnSeeRevenue.UseVisualStyleBackColor = true;
             this.btnSeeRevenue.Click += new System.EventHandler(this.btnSeeRevenue_Click);
             // 
-            // dataGridView1
+            // btnLogout
             // 
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 24);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(519, 554);
-            this.dataGridView1.TabIndex = 0;
-            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            this.btnLogout.Location = new System.Drawing.Point(603, 171);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(110, 73);
+            this.btnLogout.TabIndex = 4;
+            this.btnLogout.Text = "Đăng Xuất";
+            this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
-            // dataGridView2
+            // btnCreateBill
             // 
-            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(619, 24);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowHeadersWidth = 51;
-            this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView2.Size = new System.Drawing.Size(424, 554);
-            this.dataGridView2.TabIndex = 0;
-            this.dataGridView2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellClick);
+            this.btnCreateBill.Location = new System.Drawing.Point(96, 171);
+            this.btnCreateBill.Name = "btnCreateBill";
+            this.btnCreateBill.Size = new System.Drawing.Size(110, 73);
+            this.btnCreateBill.TabIndex = 5;
+            this.btnCreateBill.Text = "Tạo Bill";
+            this.btnCreateBill.UseVisualStyleBackColor = true;
+            this.btnCreateBill.Click += new System.EventHandler(this.btnCreateBill_Click);
             // 
-            // btnAdd
+            // lbNameStaff
             // 
-            this.btnAdd.Location = new System.Drawing.Point(537, 274);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(76, 73);
-            this.btnAdd.TabIndex = 4;
-            this.btnAdd.Text = "Thêm";
-            this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new System.EventHandler(this.button1_Click);
+            this.lbNameStaff.AutoSize = true;
+            this.lbNameStaff.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbNameStaff.Location = new System.Drawing.Point(34, 60);
+            this.lbNameStaff.Name = "lbNameStaff";
+            this.lbNameStaff.Size = new System.Drawing.Size(60, 22);
+            this.lbNameStaff.TabIndex = 6;
+            this.lbNameStaff.Text = "label1";
             // 
-            // button2
+            // lbDate
             // 
-            this.button2.Location = new System.Drawing.Point(619, 537);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(214, 41);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "Xóa";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(832, 537);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(211, 41);
-            this.button3.TabIndex = 5;
-            this.button3.Text = "In Bill";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.lbDate.AutoSize = true;
+            this.lbDate.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbDate.Location = new System.Drawing.Point(34, 23);
+            this.lbDate.Name = "lbDate";
+            this.lbDate.Size = new System.Drawing.Size(60, 22);
+            this.lbDate.TabIndex = 7;
+            this.lbDate.Text = "label1";
             // 
             // DisplayStaff
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1187, 590);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.btnAdd);
-            this.Controls.Add(this.dataGridView2);
-            this.Controls.Add(this.btnSeeRevenue);
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lbDate);
+            this.Controls.Add(this.lbNameStaff);
+            this.Controls.Add(this.btnCreateBill);
             this.Controls.Add(this.btnLogout);
+            this.Controls.Add(this.btnSeeRevenue);
             this.Name = "DisplayStaff";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DisplayStaff";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.DisplayStaff_FormClosing);
             this.Load += new System.EventHandler(this.DisplayStaff_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.Button btnLogout;
+
         private System.Windows.Forms.Button btnSeeRevenue;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnLogout;
+        private System.Windows.Forms.Button btnCreateBill;
+        private System.Windows.Forms.Label lbNameStaff;
+        private System.Windows.Forms.Label lbDate;
     }
 }

@@ -25,5 +25,13 @@ namespace project.DAO
             DataTable result = DataProvider.Instance.ExecuteQuery(query);
             return result.Rows.Count > 0;
         }
+
+        public void DeleteBill(int id)
+        {
+            string query1 = "delete from InforBill where IDBill=" + id + "";
+            DataProvider.Instance.ExecuteNonQuery(query1);
+            string query2 = "delete from Bill where IDBill=" + id + "";
+            DataProvider.Instance.ExecuteNonQuery(query2);
+        }
     }
 }
