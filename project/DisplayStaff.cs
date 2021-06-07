@@ -17,6 +17,7 @@ namespace project
         public string time;
         public string email;
         public string id;
+        
 
         public DisplayStaff()
         {
@@ -25,9 +26,11 @@ namespace project
         
         private void btnLogout_Click(object sender, EventArgs e)
         {
-            Login lg = new Login();
+            /*Report rp = new Report();
             this.Hide();
-            lg.ShowDialog();
+            rp.id = int.Parse(id);
+            rp.time = time;
+            rp.ShowDialog();*/
         }
 
         private void btnSeeRevenue_Click(object sender, EventArgs e)
@@ -44,12 +47,13 @@ namespace project
 
         private void btnCreateBill_Click(object sender, EventArgs e)
         {
-            string timeCreate = DateTime.Now.ToString("hh:mm:ss");
+            string timeCreate = DateTime.Now.ToString("HH:mm:ss");
             DisplayStaffDAO.Instance.createBill(int.Parse(id), lbDate.Text, timeCreate);
             DisplayMenu disM = new DisplayMenu();
             disM.id = id;
             disM.time = timeCreate;
             disM.timeStaff = time;
+            disM.name = lbNameStaff.Text;
             disM.idBill = DisplayStaffDAO.Instance.getIdBill(lbDate.Text, timeCreate);
             this.Hide();
             disM.ShowDialog();
@@ -60,6 +64,7 @@ namespace project
         {
             lbDate.Text = DateTime.Now.ToString("yyyy/MM/dd");
         }
+
         
     }
 }

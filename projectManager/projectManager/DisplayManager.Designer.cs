@@ -49,7 +49,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnFind = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
@@ -255,7 +254,6 @@
             this.tabPage1.Controls.Add(this.label4);
             this.tabPage1.Controls.Add(this.label3);
             this.tabPage1.Controls.Add(this.label2);
-            this.tabPage1.Controls.Add(this.btnFind);
             this.tabPage1.Controls.Add(this.btnDelete);
             this.tabPage1.Controls.Add(this.btnUpdate);
             this.tabPage1.Controls.Add(this.btnAdd);
@@ -276,7 +274,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(384, 166);
+            this.label5.Location = new System.Drawing.Point(349, 166);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(187, 25);
             this.label5.TabIndex = 13;
@@ -285,7 +283,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(384, 105);
+            this.label4.Location = new System.Drawing.Point(349, 105);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(195, 25);
             this.label4.TabIndex = 12;
@@ -294,7 +292,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(43, 166);
+            this.label3.Location = new System.Drawing.Point(14, 165);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(157, 25);
             this.label3.TabIndex = 11;
@@ -303,25 +301,15 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(43, 105);
+            this.label2.Location = new System.Drawing.Point(14, 105);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(144, 25);
             this.label2.TabIndex = 10;
             this.label2.Text = "Tên Nhân Viên";
             // 
-            // btnFind
-            // 
-            this.btnFind.Location = new System.Drawing.Point(714, 93);
-            this.btnFind.Name = "btnFind";
-            this.btnFind.Size = new System.Drawing.Size(118, 67);
-            this.btnFind.TabIndex = 9;
-            this.btnFind.Text = "Tìm Kiếm";
-            this.btnFind.UseVisualStyleBackColor = true;
-            this.btnFind.Click += new System.EventHandler(this.btnFind_Click);
-            // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(838, 93);
+            this.btnDelete.Location = new System.Drawing.Point(885, 143);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(106, 68);
             this.btnDelete.TabIndex = 8;
@@ -331,7 +319,7 @@
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(838, 167);
+            this.btnUpdate.Location = new System.Drawing.Point(761, 143);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(106, 70);
             this.btnUpdate.TabIndex = 7;
@@ -341,7 +329,7 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(714, 166);
+            this.btnAdd.Location = new System.Drawing.Point(622, 142);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(118, 71);
             this.btnAdd.TabIndex = 6;
@@ -351,28 +339,28 @@
             // 
             // txtGender
             // 
-            this.txtGender.Location = new System.Drawing.Point(389, 194);
+            this.txtGender.Location = new System.Drawing.Point(354, 194);
             this.txtGender.Name = "txtGender";
             this.txtGender.Size = new System.Drawing.Size(252, 30);
             this.txtGender.TabIndex = 5;
             // 
             // txtPass
             // 
-            this.txtPass.Location = new System.Drawing.Point(389, 133);
+            this.txtPass.Location = new System.Drawing.Point(354, 133);
             this.txtPass.Name = "txtPass";
             this.txtPass.Size = new System.Drawing.Size(252, 30);
             this.txtPass.TabIndex = 4;
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(48, 194);
+            this.txtEmail.Location = new System.Drawing.Point(19, 194);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(281, 30);
             this.txtEmail.TabIndex = 3;
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(48, 133);
+            this.txtName.Location = new System.Drawing.Point(19, 133);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(281, 30);
             this.txtName.TabIndex = 2;
@@ -384,13 +372,14 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(19, 248);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(972, 361);
             this.dataGridView1.TabIndex = 1;
-            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // label1
             // 
@@ -513,7 +502,6 @@
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.Button btnFind;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnAdd;

@@ -32,5 +32,12 @@ namespace project.DAO
             string id = result.Rows[0].ItemArray[0].ToString();
             return id;
         }
+
+        public object login(int id, string date, string time)
+        {
+            string query = "select Kho.ID, Kho.Name, SUM(InforFood.Number) as'SL' from Bill, InforBill, Food, InforFood, Kho where IDStaff =" + id + " and TimeBill> '" + time + "' and DateBill = '" + date + "' and Bill.IDBill = InforBill.IDBill and Food.IDFood = InforBill.IDFood and InforBill.IDFood = InforFood.IDFood and Kho.ID = InforFood.ID Group By Kho.Name, Kho.ID";
+            DataTable result = DataProvider.Instance.ExecuteQuery(query);
+            return result;
+        }
     }
 }

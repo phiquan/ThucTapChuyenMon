@@ -25,15 +25,17 @@ namespace project
         public string time;
         public string idBill;
         public string timeStaff;
+        public string name;
 
         int idFood;
 
         private void button1_Click(object sender, EventArgs e)
-        {
-            dataGridView1.ClearSelection();
+        {            
             DisplayMenuDAO.Instance.addFood(int.Parse(idBill), idFood);
             dataGridView2.DataSource = DisplayMenuDAO.Instance.bill(int.Parse(idBill));
             textBox1.Text = DisplayMenuDAO.Instance.totalprice(int.Parse(idBill));
+            dataGridView1.ClearSelection();
+            dataGridView2.ClearSelection();
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -74,6 +76,13 @@ namespace project
         {
             dataGridView1.DataSource = DisplayMenuDAO.Instance.menu();
             dataGridView2.DataSource = DisplayMenuDAO.Instance.bill(int.Parse(idBill));
+
+            dataGridView1.ClearSelection();
+            dataGridView2.ClearSelection();
+
+            lbName.Text = name;
+            lbID.Text = "Số Bill " + idBill;
+            lbDate.Text = time;
         }
 
         private void btnDeleteFood_Click(object sender, EventArgs e)
@@ -83,6 +92,7 @@ namespace project
                 DisplayMenuDAO.Instance.deleteFood(int.Parse(idBill), idFood);
                 dataGridView2.DataSource = DisplayMenuDAO.Instance.bill(int.Parse(idBill));
                 textBox1.Text = DisplayMenuDAO.Instance.totalprice(int.Parse(idBill));
+                dataGridView2.ClearSelection();
             }
             catch (Exception)
             {
@@ -104,11 +114,26 @@ namespace project
         {
             int price = int.Parse(textBox1.Text);
             DisplayMenuDAO.Instance.upPrice(int.Parse(idBill), price);
+            DisplayMenuDAO.Instance.upKho(int.Parse(idBill));
             DisplayStaff disS = new DisplayStaff();            
             disS.id = id;
             disS.time = timeStaff;
             this.Hide();
             disS.ShowDialog();
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(textBox2.Text))
+            {
+                (dataGridView1.DataSource as DataTable).DefaultView.RowFilter = string.Empty;
+                dataGridView1.ClearSelection();
+            }
+            else
+            {
+                (dataGridView1.DataSource as DataTable).DefaultView.RowFilter = string.Format("NameFood LIKE '{0}%'", textBox2.Text);
+                dataGridView1.ClearSelection();
+            }
         }
     }
 }

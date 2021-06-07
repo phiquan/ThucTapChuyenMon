@@ -73,6 +73,7 @@
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(191, 27);
             this.txtID.TabIndex = 3;
+            this.txtID.Text = "phiquan@gmail.com";
             // 
             // txtPass
             // 
@@ -111,6 +112,7 @@
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
+            this.Load += new System.EventHandler(this.Login_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

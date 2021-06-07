@@ -19,7 +19,7 @@ namespace project
             InitializeComponent();
         }
 
-
+        string time;
         private void btnLogin_Click(object sender, EventArgs e)
         {
             
@@ -30,7 +30,7 @@ namespace project
                 DisplayStaff d = new DisplayStaff();
                 this.Hide();
                 d.name.Text = fullname(userName);
-                d.time = DateTime.Now.ToString("hh:mm:ss");
+                d.time = time;
                 d.email = txtID.Text;
                 d.id = idStaff(userName);
                 d.ShowDialog();
@@ -57,6 +57,9 @@ namespace project
             return LoginDAO.Instance.getId(username);
         }
 
-        
+        private void Login_Load(object sender, EventArgs e)
+        {
+            time = DateTime.Now.ToString("HH:mm:ss");
+        }
     }
 }

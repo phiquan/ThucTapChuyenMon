@@ -25,7 +25,8 @@ namespace project
             string pass = txtPass.Text;
             if (Login(userName, pass))
             {
-                LoginDeleteDAO.Instance.DeleteBill(id);
+                LoginDeleteDAO.Instance.upKho(id);
+                LoginDeleteDAO.Instance.DeleteBill(id);                
                 MessageBox.Show("Xóa Thành Công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 this.Hide();           
             }

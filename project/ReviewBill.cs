@@ -39,16 +39,17 @@ namespace project
         {
             LoginDelete lgd = new LoginDelete();
             lgd.id = idbill;
+            lgd.ShowDialog();
             dataGridView1.DataSource = ReviewBillDAO.Instance.Review(int.Parse(id), date, time);
             dataGridView1.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            lgd.ShowDialog();
-
+            dataGridView1.ClearSelection();
         }
 
         private void ReviewBill_Load(object sender, EventArgs e)
         {
             dataGridView1.DataSource = ReviewBillDAO.Instance.Review(int.Parse(id),date,time);
             dataGridView1.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridView1.ClearSelection();
         }
 
         private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
@@ -82,7 +83,7 @@ namespace project
             }
             else
             {
-                (dataGridView1.DataSource as DataTable).DefaultView.RowFilter = string.Format("IDBill LIKE '{0}%'", int.Parse(txtIdBill.Text));
+                (dataGridView1.DataSource as DataTable).DefaultView.RowFilter = string.Format("CONVERT(IDBill, 'System.String') LIKE '%{0}%'",txtIdBill.Text);
             }
         }
     }

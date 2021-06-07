@@ -33,5 +33,19 @@ namespace project.DAO
             string query2 = "delete from Bill where IDBill=" + id + "";
             DataProvider.Instance.ExecuteNonQuery(query2);
         }
+
+        public void upKho(int idbill)
+        {
+            string query1 = "select InforFood.ID, SUM(InforFood.Number) from Bill, InforBill, Food, InforFood, Kho where Bill.IDBill = " + idbill + " and InforBill.IDFood = Food.IDFood and InforBill.IDBill = Bill.IDBill and Food.IDFood = InforFood.IDFood and InforFood.ID = Kho.ID Group By InforFood.ID";
+            DataTable result = DataProvider.Instance.ExecuteQuery(query1);
+
+            int len = result.Rows.Count;
+
+            for (int i = 0; i < len; i++)
+            {
+                string query2 = "update Kho set Number=Number+" + int.Parse(result.Rows[i].ItemArray[1].ToString()) + " where ID=" + int.Parse(result.Rows[i].ItemArray[0].ToString()) + "";
+                DataProvider.Instance.ExecuteNonQuery(query2);
+            }
+        }
     }
 }

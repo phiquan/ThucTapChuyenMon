@@ -236,4 +236,57 @@ begin
 
 	delete from InforBill where IDBill=8
 	delete from Bill where IDBill=8
+
+
+	select Kho.Name, SUM(Kho.Number) as 'Số Lượng'
+	from Bill, InforFood, InforBill, Kho, Food
+	where Bill.IDStaff = 1 and Date=''
+
+	select *
+	from Bill
+	where IDStaff=7 and TimeBill>'06:20:00' and DateBill='2021/06/04'
+
+
+	select InforBill.IDFood, Number
+	from Bill, InforBill, Food
+	where IDStaff=7 and TimeBill>'06:20:00' and DateBill='2021/06/04' 
+		and Bill.IDBill=InforBill.IDBill and Food.IDFood=InforBill.IDFood
+
+
+
+	select InforFood.IDInforFood, InforFood.Number , InforBill.Number
+	from Bill, InforBill, Food, InforFood
+	where IDStaff=7 and TimeBill>'06:20:00' and DateBill='2021/06/04' 
+		and Bill.IDBill=InforBill.IDBill and Food.IDFood=InforBill.IDFood
+		and InforBill.IDFood=InforFood.IDFood
+
+
+	select InforFood.ID, SUM(InforFood.Number) as'SL' 
+	from Bill, InforBill, Food, InforFood
+	where IDStaff=7 and TimeBill>'11:16:00' and DateBill='2021/06/04' 
+		and Bill.IDBill=InforBill.IDBill and Food.IDFood=InforBill.IDFood
+		and InforBill.IDFood=InforFood.IDFood
+	Group By InforFood.ID
+
+	select Kho.ID, Kho.Name, SUM(InforFood.Number) as'SL' 
+	from Bill, InforBill, Food, InforFood, Kho
+	where IDStaff=7 and TimeBill>'11:16:00' and DateBill='2021/06/04' 
+		and Bill.IDBill=InforBill.IDBill and Food.IDFood=InforBill.IDFood
+		and InforBill.IDFood=InforFood.IDFood
+		and Kho.ID=InforFood.ID
+	Group By Kho.Name, Kho.ID
+
+
+	select * from Kho 
+
+	update Kho set Number
 end
+
+
+update Kho set Number=Number+10 where ID=11
+
+
+select InforFood.ID, SUM(InforFood.Number)
+from Bill, InforBill, Food, InforFood,Kho
+where Bill.IDBill=66 and InforBill.IDFood=Food.IDFood and InforBill.IDBill=Bill.IDBill and Food.IDFood=InforFood.IDFood and InforFood.ID=Kho.ID
+Group By InforFood.ID

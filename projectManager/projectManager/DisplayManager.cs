@@ -17,7 +17,6 @@ namespace projectManager
         {
             InitializeComponent();
             btnDelete.Enabled = false;
-            btnFind.Enabled = false;
             btnUpdate.Enabled = false;
 
             btnUpdateProduct.Enabled = false;
@@ -40,8 +39,6 @@ namespace projectManager
             //Staff
             dataGridView1.DataSource = StaffDAO.Instance.staff();
             dataGridView1.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridView1.Columns[0].Visible = false;
-            dataGridView1.Columns[3].Visible = false;
             dataGridView1.Columns[4].Width = 80;
             dataGridView1.ClearSelection();
 
@@ -57,44 +54,26 @@ namespace projectManager
 
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            try
-            {
-                if (e.RowIndex >= 0)
-                {
-                    DataGridViewRow row = this.dataGridView1.Rows[e.RowIndex];
-                    txtName.Text = row.Cells[1].Value.ToString();
-                    txtEmail.Text = row.Cells[2].Value.ToString();
-                    txtPass.Text = row.Cells[3].Value.ToString();
-                    txtGender.Text = row.Cells[4].Value.ToString();
-                    id = int.Parse(row.Cells[0].Value.ToString());
-
-                    btnAdd.Enabled = true;
-                    btnDelete.Enabled = true;
-                    btnFind.Enabled = true;
-                    btnUpdate.Enabled = true;
-                }
-            }
-            catch(Exception)
-            {
-
-            }
-        }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            StaffDAO.Instance.Delete(id);
-            dataGridView1.DataSource = StaffDAO.Instance.staff();
-            MessageBox.Show("Xóa thông tin thành công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            txtName.Text = clear;
-            txtEmail.Text = clear;
-            txtPass.Text = clear;
-            txtGender.Text = clear;
+            try
+            {
+                StaffDAO.Instance.Delete(id);
+                dataGridView1.DataSource = StaffDAO.Instance.staff();
+                MessageBox.Show("Xóa thông tin thành công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtName.Text = clear;
+                txtEmail.Text = clear;
+                txtPass.Text = clear;
+                txtGender.Text = clear;
 
-            btnDelete.Enabled = false;
-            btnFind.Enabled = false;
-            btnUpdate.Enabled = false;
+                btnDelete.Enabled = false;
+                btnUpdate.Enabled = false;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Bạn không thể xóa nhân viên này", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -105,26 +84,18 @@ namespace projectManager
             string gender = txtGender.Text;
             if(name != "" && email != "" && pass != "" && gender != "")
             {
-                if (StaffDAO.Instance.checkAdd(email))
-                {
-                    StaffDAO.Instance.Update(id, name, email, pass, gender);
-                    dataGridView1.DataSource = StaffDAO.Instance.staff();
-                    MessageBox.Show("Update thông tin thành công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                StaffDAO.Instance.Update(id, name, email, pass, gender);
+                dataGridView1.DataSource = StaffDAO.Instance.staff();
+                MessageBox.Show("Update thông tin thành công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    txtName.Text = clear;
-                    txtEmail.Text = clear;
-                    txtPass.Text = clear;
-                    txtGender.Text = clear;
+                txtName.Text = clear;
+                txtEmail.Text = clear;
+                txtPass.Text = clear;
+                txtGender.Text = clear;
 
-                    btnDelete.Enabled = false;
-                    btnFind.Enabled = false;
-                    btnUpdate.Enabled = false;
-                }
-                else
-                {
-                    MessageBox.Show("Email đã tồn tại", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                
+                btnDelete.Enabled = false;
+                btnUpdate.Enabled = false;
+
             }
             else
             {
@@ -154,7 +125,6 @@ namespace projectManager
                     txtGender.Text = clear;
 
                     btnDelete.Enabled = false;
-                    btnFind.Enabled = false;
                     btnUpdate.Enabled = false;
                 }
                 else
@@ -170,15 +140,6 @@ namespace projectManager
 
         }
 
-        //Chưa xong 
-        private void btnFind_Click(object sender, EventArgs e)
-        {
-            string name = txtName.Text + "#";
-            string email = txtEmail.Text + "#";
-            string pass = txtPass.Text + "#";
-            string gender = txtGender.Text;
-            string chuoi = name + email + pass + gender;
-        }
 
         public string nameProduct;
         public int priceProdct;
@@ -379,13 +340,40 @@ namespace projectManager
 
         private void txtName_TextChanged(object sender, EventArgs e)
         {
+            
             if (string.IsNullOrEmpty(txtName.Text))
             {
                 (dataGridView1.DataSource as DataTable).DefaultView.RowFilter = string.Empty;
+                dataGridView1.ClearSelection();
             }
             else
             {
                 (dataGridView1.DataSource as DataTable).DefaultView.RowFilter = string.Format("NameStaff LIKE '{0}%'", txtName.Text);
+                dataGridView1.ClearSelection();
+            }
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                if (e.RowIndex >= 0)
+                {
+                    DataGridViewRow row = this.dataGridView1.Rows[e.RowIndex];
+                    txtName.Text = row.Cells[1].Value.ToString();
+                    //txtEmail.Text = row.Cells[2].Value.ToString();
+                    //txtPass.Text = row.Cells[3].Value.ToString();
+                    //txtGender.Text = row.Cells[4].Value.ToString();
+                    //id = int.Parse(row.Cells[0].Value.ToString());
+                    MessageBox.Show(txtEmail.Text);
+                    btnAdd.Enabled = true;
+                    btnDelete.Enabled = true;
+                    btnUpdate.Enabled = true;
+                }
+            }
+            catch (Exception)
+            {
+
             }
         }
     }
