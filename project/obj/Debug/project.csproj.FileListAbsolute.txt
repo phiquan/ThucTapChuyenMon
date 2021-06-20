@@ -69,6 +69,9 @@ D:\Git TTCM\ThucTapChuyenMon\project\bin\Debug\pt\Microsoft.ReportViewer.WinForm
 D:\Git TTCM\ThucTapChuyenMon\project\bin\Debug\ru\Microsoft.ReportViewer.WinForms.resources.dll
 D:\Git TTCM\ThucTapChuyenMon\project\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
 D:\Git TTCM\ThucTapChuyenMon\project\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
-D:\Git TTCM\ThucTapChuyenMon\project\obj\Debug\RdlCompile.cache
-D:\Git TTCM\ThucTapChuyenMon\project\obj\Debug\RdlCompile.compiled
 D:\Git TTCM\ThucTapChuyenMon\project\obj\Debug\project.csproj.CopyComplete
+D:\Git TTCM\ThucTapChuyenMon\project\bin\Debug\AutoItX3.dll
+D:\Git TTCM\ThucTapChuyenMon\project\bin\Debug\AutoItX3_x64.dll
+D:\Git TTCM\ThucTapChuyenMon\project\bin\Debug\AutoItX3.Assembly.dll
+D:\Git TTCM\ThucTapChuyenMon\project\bin\Debug\IA.Framework.PrintDocument.dll
+D:\Git TTCM\ThucTapChuyenMon\project\bin\Debug\AutoItX3.Assembly.xml

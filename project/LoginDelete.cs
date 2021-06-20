@@ -18,7 +18,7 @@ namespace project
             InitializeComponent();
         }
         public int id;
-
+        public int idStaff;
         private void btnLogin_Click(object sender, EventArgs e)
         {
             string userName = txtID.Text;
@@ -46,6 +46,7 @@ namespace project
         {
             ReviewBill rv = new ReviewBill();
             this.Hide();
+            rv.id = id.ToString();
             rv.ShowDialog();
         }
     }

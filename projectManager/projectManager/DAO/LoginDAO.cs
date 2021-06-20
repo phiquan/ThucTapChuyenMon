@@ -25,5 +25,18 @@ namespace projectManager.DAO
             DataTable result = DataProvider.Instance.ExecuteQuery(query);
             return result.Rows.Count > 0;
         }
+
+        public void ChangePass(string pass)
+        {
+            string query = "update Manager set Pass='" + pass + "' where IDMa=1";
+            DataProvider.Instance.ExucuteNonQuery(query);
+        }
+
+        public bool checkPass(string pass)
+        {
+            string query = "select * from Manager where Pass='" + pass + "'";
+            DataTable result = DataProvider.Instance.ExecuteQuery(query);
+            return result.Rows.Count > 0;
+        }
     }
 }

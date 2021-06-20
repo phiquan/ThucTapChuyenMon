@@ -22,7 +22,7 @@ namespace project
         public string id;
         public string date;
         public string time;
-        
+        public string name;
 
         int idbill;
 
@@ -31,6 +31,7 @@ namespace project
             DisplayStaff dis = new DisplayStaff();
             dis.id = id;
             dis.time = time;
+            dis.name = name;
             this.Hide();
             dis.ShowDialog();
         }
@@ -39,6 +40,7 @@ namespace project
         {
             LoginDelete lgd = new LoginDelete();
             lgd.id = idbill;
+            lgd.idStaff = int.Parse(id);
             lgd.ShowDialog();
             dataGridView1.DataSource = ReviewBillDAO.Instance.Review(int.Parse(id), date, time);
             dataGridView1.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;

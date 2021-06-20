@@ -29,7 +29,7 @@ namespace project
             {
                 DisplayStaff d = new DisplayStaff();
                 this.Hide();
-                d.name.Text = fullname(userName);
+                d.name = fullname(userName);
                 d.time = time;
                 d.email = txtID.Text;
                 d.id = idStaff(userName);

@@ -73,12 +73,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Bill.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Bill.Designer.cs">
-      <DependentUpon>Bill.cs</DependentUpon>
-    </Compile>
     <Compile Include="DAO\DataProvider.cs" />
     <Compile Include="DAO\DisplayStaffDAO.cs" />
     <Compile Include="DAO\LoginDAO.cs" />
@@ -118,9 +112,6 @@
       <DependentUpon>ReviewBill.cs</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
-    <EmbeddedResource Include="Bill.resx">
-      <DependentUpon>Bill.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="DisplayMenu.resx">
       <DependentUpon>DisplayMenu.cs</DependentUpon>
     </EmbeddedResource>
@@ -142,7 +133,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="ReportStaff.rdlc" />
     <EmbeddedResource Include="ReviewBill.resx">
       <DependentUpon>ReviewBill.cs</DependentUpon>
     </EmbeddedResource>

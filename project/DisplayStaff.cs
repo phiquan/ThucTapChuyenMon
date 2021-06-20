@@ -13,7 +13,7 @@ namespace project
 {
     public partial class DisplayStaff : Form
     {
-        public Label name { get { return this.lbNameStaff; } }
+        public string name;
         public string time;
         public string email;
         public string id;
@@ -26,11 +26,9 @@ namespace project
         
         private void btnLogout_Click(object sender, EventArgs e)
         {
-            /*Report rp = new Report();
+            Login lg = new Login();
             this.Hide();
-            rp.id = int.Parse(id);
-            rp.time = time;
-            rp.ShowDialog();*/
+            lg.ShowDialog();
         }
 
         private void btnSeeRevenue_Click(object sender, EventArgs e)
@@ -41,6 +39,7 @@ namespace project
             rv.id = id;
             rv.time = time;
             rv.date = DateTime.Now.ToString("yyyy/MM/dd");
+            rv.name = name;
 
             rv.ShowDialog();
         }
@@ -63,6 +62,7 @@ namespace project
         private void DisplayStaff_Load(object sender, EventArgs e)
         {
             lbDate.Text = DateTime.Now.ToString("yyyy/MM/dd");
+            lbNameStaff.Text = name;
         }
 
         

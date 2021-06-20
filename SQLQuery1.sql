@@ -68,6 +68,7 @@ create table Bill
 	DateBill date,
 	TimeBill time,
 	TotalPrice int,
+
 	FOREIGN KEY (IDStaff) REFERENCES Staff(IDStaff)
 )
 
@@ -270,7 +271,7 @@ begin
 
 	select Kho.ID, Kho.Name, SUM(InforFood.Number) as'SL' 
 	from Bill, InforBill, Food, InforFood, Kho
-	where IDStaff=7 and TimeBill>'11:16:00' and DateBill='2021/06/04' 
+	where IDStaff=7 and TimeBill>'22:16:00' and DateBill='2021/06/19' 
 		and Bill.IDBill=InforBill.IDBill and Food.IDFood=InforBill.IDFood
 		and InforBill.IDFood=InforFood.IDFood
 		and Kho.ID=InforFood.ID
@@ -288,5 +289,15 @@ update Kho set Number=Number+10 where ID=11
 
 select InforFood.ID, SUM(InforFood.Number)
 from Bill, InforBill, Food, InforFood,Kho
-where Bill.IDBill=66 and InforBill.IDFood=Food.IDFood and InforBill.IDBill=Bill.IDBill and Food.IDFood=InforFood.IDFood and InforFood.ID=Kho.ID
+where Bill.IDBill=32 and InforBill.IDFood=Food.IDFood and InforBill.IDBill=Bill.IDBill and Food.IDFood=InforFood.IDFood and InforFood.ID=Kho.ID
 Group By InforFood.ID
+
+select DateBill, SUM(TotalPrice) as 'TotalPrice' 
+from Bill 
+where Month(DateBill) = '06' and Year(DateBill) = '2021'
+Group By DateBill
+
+
+select IDBill, NameStaff, DateBill, TimeBill, TotalPrice
+from Bill, Staff
+where DateBill='06/20/2021' and Staff.IDStaff=Bill.IDStaff

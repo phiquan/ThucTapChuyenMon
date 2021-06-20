@@ -21,7 +21,7 @@ namespace project.DAO
 
         public object menu()
         {
-            string query = "select * from Food";
+            string query = "select IDFood, NameFood, Price from Food where Status='stocking'";
             return DataProvider.Instance.ExecuteQuery(query);
         }
 

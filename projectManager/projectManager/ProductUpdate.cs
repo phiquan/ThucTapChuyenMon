@@ -28,6 +28,8 @@ namespace projectManager
             txtPrice.Text = price.ToString();
             txtID.ReadOnly = true;
 
+
+
         }
 
         private void btnAddProd_Click(object sender, EventArgs e)

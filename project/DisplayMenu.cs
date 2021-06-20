@@ -118,6 +118,7 @@ namespace project
             DisplayStaff disS = new DisplayStaff();            
             disS.id = id;
             disS.time = timeStaff;
+            disS.name = name;
             this.Hide();
             disS.ShowDialog();
         }

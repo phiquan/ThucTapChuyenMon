@@ -20,26 +20,33 @@ namespace projectManager
 
         private void btnUpdateProd_Click(object sender, EventArgs e)
         {
-            if(txtID.Text != "" && txtName.Text != "" && txtPrice.Text != "")
-            {                
-                var mess = MessageBox.Show("Vui lòng thêm thông tin sản phẩm", "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-                if (mess == DialogResult.Yes)
+            try
+            {
+                if (txtID.Text != "" && txtName.Text != "" && txtPrice.Text != "")
                 {
-                    ProductDAO.Instance.Add(int.Parse(txtID.Text), txtName.Text, int.Parse(txtPrice.Text));
-                    InforProduct ifp = new InforProduct();
-                    ifp.id = int.Parse(txtID.Text);
-                    ifp.nameProd = txtName.Text;
-                    this.Hide();
-                    ifp.ShowDialog();
+                    var mess = MessageBox.Show("Vui lòng thêm thông tin sản phẩm", "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    if (mess == DialogResult.Yes)
+                    {
+                        ProductDAO.Instance.Add(int.Parse(txtID.Text), txtName.Text, int.Parse(txtPrice.Text));
+                        InforProduct ifp = new InforProduct();
+                        ifp.id = int.Parse(txtID.Text);
+                        ifp.nameProd = txtName.Text;
+                        this.Hide();
+                        ifp.ShowDialog();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Thêm sản phẩm không thành công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Thêm sản phẩm không thành công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Vui lòng không bỏ trống", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
-            else
+            catch(Exception)
             {
-                MessageBox.Show("Vui lòng không bỏ trống", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Bạn đã bị trùng ID sản phẩm", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
     }

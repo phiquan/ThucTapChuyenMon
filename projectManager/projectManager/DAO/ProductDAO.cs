@@ -33,16 +33,19 @@ namespace projectManager.DAO
 
         public void Add(int id,string name,int price)
         {
-            string query = "insert into Food values(" + id + ",N'" + name + "'," + price + ")";
+            string query = "insert into Food values(" + id + ",N'" + name + "'," + price + ",'stocking')";
             DataProvider.Instance.ExucuteNonQuery(query);
         }
 
         public void Delete(int id)
         {
-            string query1 = "delete from InforFood where IDFood=" + id + "";
+            /*string query1 = "delete from InforFood where IDFood=" + id + "";
             DataProvider.Instance.ExucuteNonQuery(query1);
             string query2 = "delete from Food where IDFood=" + id + "";
-            DataProvider.Instance.ExucuteNonQuery(query2);
+            DataProvider.Instance.ExucuteNonQuery(query2);*/
+
+            string query = "update Food set Status='Sold out' where IDFood=" + id + "";
+            DataProvider.Instance.ExucuteNonQuery(query);
         }
 
         

@@ -25,14 +25,14 @@ namespace projectManager
             btnUpdateProd.Enabled = false;
             btnDeleteProd.Enabled = false;
             btnUpdateInfor.Enabled = false;
-            
+
 
         }
 
         private int id;
         private string clear = string.Empty;
+        private string idate;
 
-        
 
         public void DisplayManager_Load(object sender, EventArgs e)
         {
@@ -50,7 +50,21 @@ namespace projectManager
             //Product
             dataGridView3.DataSource = ProductDAO.Instance.product();
             dataGridView3.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridView3.ClearSelection();
+
+            //Statistical
+            chart1.DataSource = StatisticalDAO.Instance.see();
+            chart1.ChartAreas["ChartArea1"].AxisX.Title = "Doanh thu của tháng " + DateTime.Now.ToString("MM");
+
+            chart1.Series["Tiền"].XValueMember = "DateBill";
+            chart1.Series["Tiền"].YValueMembers = "TotalPrice";
+
+            //Bill
+            dateTimePicker1.Format = DateTimePickerFormat.Short;
+            dateTimePicker1.Value = DateTime.Today;
+
+            idate = dateTimePicker1.Value.ToShortDateString();
+            dataGridView4.DataSource = BillDAO.Instance.bill(idate);
+
 
         }
 
@@ -146,6 +160,7 @@ namespace projectManager
 
         private void dataGridView3_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            string status;
             try
             {
                 if (e.RowIndex >= 0)
@@ -154,8 +169,16 @@ namespace projectManager
                     id = int.Parse(row.Cells[0].Value.ToString());
                     nameProduct = row.Cells[1].Value.ToString();
                     priceProdct = int.Parse(row.Cells[2].Value.ToString());
+                    status = row.Cells[3].Value.ToString();
 
-                    btnDeleteProd.Enabled = true;
+                    if(status.Equals("Sold out"))
+                    {
+                        btnDeleteProd.Enabled = false;
+                    }
+                    else
+                    {
+                        btnDeleteProd.Enabled = true;
+                    }
                     btnUpdateProd.Enabled = true;
                     btnUpdateInfor.Enabled = true;
                 }
@@ -213,7 +236,7 @@ namespace projectManager
         }
 
         private void tabPage2_Click(object sender, EventArgs e)
-        {
+        {;
             txtID.Text = clear;
             txtNameProd.Text = clear;
             txtNumber.Text = clear;
@@ -221,7 +244,6 @@ namespace projectManager
             btnAddProduct.Enabled = true;
             btnDeleteProduct.Enabled = false;
             btnUpdateProduct.Enabled = false;
-            
         }
 
         private void btnAddProduct_Click(object sender, EventArgs e)
@@ -361,11 +383,10 @@ namespace projectManager
                 {
                     DataGridViewRow row = this.dataGridView1.Rows[e.RowIndex];
                     txtName.Text = row.Cells[1].Value.ToString();
-                    //txtEmail.Text = row.Cells[2].Value.ToString();
-                    //txtPass.Text = row.Cells[3].Value.ToString();
-                    //txtGender.Text = row.Cells[4].Value.ToString();
-                    //id = int.Parse(row.Cells[0].Value.ToString());
-                    MessageBox.Show(txtEmail.Text);
+                    txtEmail.Text = row.Cells[2].Value.ToString();
+                    txtPass.Text = row.Cells[3].Value.ToString();
+                    txtGender.Text = row.Cells[4].Value.ToString();
+                    id = int.Parse(row.Cells[0].Value.ToString());
                     btnAdd.Enabled = true;
                     btnDelete.Enabled = true;
                     btnUpdate.Enabled = true;
@@ -375,6 +396,26 @@ namespace projectManager
             {
 
             }
+        }
+
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            idate = dateTimePicker1.Value.ToShortDateString();
+            dataGridView4.DataSource = BillDAO.Instance.bill(idate);
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            Login lg = new Login();
+            this.Hide();
+            lg.ShowDialog();
+        }
+
+        private void btnChangePass_Click(object sender, EventArgs e)
+        {
+            ChangePass changePass = new ChangePass();
+            changePass.ShowDialog();
         }
     }
 }

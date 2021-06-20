@@ -40,7 +40,7 @@
             // 
             // btnAddProd
             // 
-            this.btnAddProd.Location = new System.Drawing.Point(178, 370);
+            this.btnAddProd.Location = new System.Drawing.Point(173, 366);
             this.btnAddProd.Name = "btnAddProd";
             this.btnAddProd.Size = new System.Drawing.Size(105, 51);
             this.btnAddProd.TabIndex = 17;
@@ -69,7 +69,7 @@
             // txtPrice
             // 
             this.txtPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrice.Location = new System.Drawing.Point(73, 315);
+            this.txtPrice.Location = new System.Drawing.Point(73, 291);
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.Size = new System.Drawing.Size(302, 30);
             this.txtPrice.TabIndex = 14;
@@ -78,7 +78,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(69, 290);
+            this.label3.Location = new System.Drawing.Point(69, 266);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(79, 22);
             this.label3.TabIndex = 13;
@@ -87,7 +87,7 @@
             // txtName
             // 
             this.txtName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtName.Location = new System.Drawing.Point(73, 219);
+            this.txtName.Location = new System.Drawing.Point(73, 201);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(302, 30);
             this.txtName.TabIndex = 12;
@@ -96,7 +96,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(69, 194);
+            this.label1.Location = new System.Drawing.Point(69, 176);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(122, 22);
             this.label1.TabIndex = 11;
@@ -117,7 +117,7 @@
             this.AcceptButton = this.btnAddProd;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(472, 450);
+            this.ClientSize = new System.Drawing.Size(472, 457);
             this.Controls.Add(this.btnAddProd);
             this.Controls.Add(this.txtID);
             this.Controls.Add(this.label2);
