@@ -24,13 +24,15 @@ Giảng viên: Thầy Nguyễn Lê Minh. 
 9. Xem lại các hóa đơn của ca làm việc hiện tại(xóa hóa đơn, tìm kiếm gần đúng số hóa đơn)
 10. Cập nhật lại kho hàng khi in hóa đơn hoặc xóa hóa đơn
 11. Báo cáo số lượng doanh thu và hàng hóa khi đăng xuất ca làm việc của nhân viên
+12. Thống kê doanh số trong tháng (theo tháng từ đầu tháng đến cuối tháng)
+13. Kiểm tra hóa đơn quyền quản lý, có thể xem theo ngày
 
 ## Phần 3: Các chức năng chưa hoàn thành:
-1. Thống kê doanh số 
-2. In hóa đơn
-3. Đóng gói chương trình
+1. In hóa đơn
+2. Đóng gói chương trình
 
 ## Hướng dẫn sử dụng:
-
+1. Quyền quản lý đăng nhập với Email: phiquan2509@gmail.com password: 123 
+2. Quyền nhân viên với các email và password của nhân viên ví dụ email: phiquan@gmail.com  password: 1234. Nhân viên chỉ có quyền tạo hóa đơn và xem hóa đơn, còn xóa hóa đơn thì yêu cầu quyền đăng nhập của quản lý mới xóa được.
 
 Xin cám ơn!
