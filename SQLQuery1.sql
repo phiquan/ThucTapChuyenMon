@@ -301,3 +301,7 @@ Group By DateBill
 select IDBill, NameStaff, DateBill, TimeBill, TotalPrice
 from Bill, Staff
 where DateBill='06/20/2021' and Staff.IDStaff=Bill.IDStaff
+
+select * from InforFood, Kho where InforFood.ID = Kho.ID and Kho.ID =13
+
+delete from InforFood where IDInforFood=13

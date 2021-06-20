@@ -32,7 +32,7 @@ namespace projectManager
         private int id;
         private string clear = string.Empty;
         private string idate;
-
+        private int month = int.Parse(DateTime.Now.ToString("MM"));
 
         public void DisplayManager_Load(object sender, EventArgs e)
         {
@@ -52,8 +52,8 @@ namespace projectManager
             dataGridView3.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
             //Statistical
-            chart1.DataSource = StatisticalDAO.Instance.see();
-            chart1.ChartAreas["ChartArea1"].AxisX.Title = "Doanh thu của tháng " + DateTime.Now.ToString("MM");
+            chart1.DataSource = StatisticalDAO.Instance.see(month);
+            chart1.ChartAreas["ChartArea1"].AxisX.Title = "Doanh thu của tháng " + month.ToString();
 
             chart1.Series["Tiền"].XValueMember = "DateBill";
             chart1.Series["Tiền"].YValueMembers = "TotalPrice";
@@ -174,13 +174,16 @@ namespace projectManager
                     if(status.Equals("Sold out"))
                     {
                         btnDeleteProd.Enabled = false;
+                        btnUpdateProd.Enabled = false;
+                        btnUpdateInfor.Enabled = false;
                     }
                     else
                     {
                         btnDeleteProd.Enabled = true;
+                        btnUpdateProd.Enabled = true;
+                        btnUpdateInfor.Enabled = true;
                     }
-                    btnUpdateProd.Enabled = true;
-                    btnUpdateInfor.Enabled = true;
+                    
                 }
             }
             catch (Exception) { }
@@ -297,18 +300,25 @@ namespace projectManager
 
         private void btnDeleteProduct_Click(object sender, EventArgs e)
         {
-            if (WarehouseDAO.Instance.checkFood(int.Parse(txtID.Text)))
+            try
             {
-                WarehouseDAO.Instance.Delete(int.Parse(txtID.Text));
-                dataGridView2.DataSource = WarehouseDAO.Instance.warehouse();
-                MessageBox.Show("Xóa thành công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                txtID.Text = clear;
-                txtNameProd.Text = clear;
-                txtNumber.Text = clear;
+                if (WarehouseDAO.Instance.checkFood(int.Parse(txtID.Text)))
+                {
+                    WarehouseDAO.Instance.Delete(int.Parse(txtID.Text));
+                    dataGridView2.DataSource = WarehouseDAO.Instance.warehouse();
+                    MessageBox.Show("Xóa thành công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    txtID.Text = clear;
+                    txtNameProd.Text = clear;
+                    txtNumber.Text = clear;
+                }
+                else
+                {
+                    MessageBox.Show("Sản phẩm này còn bán,Vui lòng không được xóa", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
-            else
+            catch (Exception)
             {
-                MessageBox.Show("Sản phẩm này còn bán,Vui lòng không được xóa", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("????", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -334,21 +344,14 @@ namespace projectManager
 
         private void btnDeleteProd_Click(object sender, EventArgs e)
         {
-            try
+            var mess = MessageBox.Show("Bạn có muốn ngừng bán sản phẩm này", "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            if (mess == DialogResult.Yes)
             {
-                var mess = MessageBox.Show("Bạn có muốn xóa sản phẩm này", "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-                if (mess == DialogResult.Yes)
-                {
-                    ProductDAO.Instance.Delete(id);
-                    dataGridView3.DataSource = ProductDAO.Instance.product();
-                    dataGridView3.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                }
+                ProductDAO.Instance.Delete(id);
+                dataGridView3.DataSource = ProductDAO.Instance.product();
+                dataGridView3.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             }
-            catch (Exception)
-            {
-                MessageBox.Show("Sản phẩm đã được bán không xóa được", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            
+
         }
 
         private void btnUpdateInfor_Click(object sender, EventArgs e)

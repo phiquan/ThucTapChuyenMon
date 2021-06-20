@@ -39,9 +39,9 @@ namespace projectManager.DAO
 
         public void Delete(int id)
         {
-            /*string query1 = "delete from InforFood where IDFood=" + id + "";
+            string query1 = "delete from InforFood where IDFood=" + id + "";
             DataProvider.Instance.ExucuteNonQuery(query1);
-            string query2 = "delete from Food where IDFood=" + id + "";
+            /*string query2 = "delete from Food where IDFood=" + id + "";
             DataProvider.Instance.ExucuteNonQuery(query2);*/
 
             string query = "update Food set Status='Sold out' where IDFood=" + id + "";

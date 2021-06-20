@@ -19,9 +19,9 @@ namespace projectManager.DAO
 
         private StatisticalDAO() { }
 
-        public object see()
+        public object see(int month)
         {
-            string query = "select DateBill, SUM(TotalPrice) as 'TotalPrice' from Bill where DateBill>='2021-06-01' Group By DateBill";
+            string query = "select DateBill, SUM(TotalPrice) as 'TotalPrice' from Bill where DateBill>='2021-" + month + "-01' Group By DateBill";
             DataTable result = DataProvider.Instance.ExecuteQuery(query);
             return result;
         }
