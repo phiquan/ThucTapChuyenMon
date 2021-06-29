@@ -21,13 +21,16 @@ create table Manager
 	DateOfBirth date, 
 )
 
+
+
 create table Staff
 (
 	IDStaff int IDENTITY(1,1) PRIMARY KEY,
 	NameStaff nvarchar(50),
 	Email nvarchar(50) UNIQUE NOT NULL,
 	Pass nvarchar(50) NOT NULL,
-	Gender nvarchar(50), 	
+	Gender nvarchar(50),
+	Status nvarchar(50)	
 )
 
 create table Food
@@ -60,7 +63,7 @@ create table InforBill
 	FOREIGN KEY(IDBill) REFERENCES Bill(IDBill),
 	FOREIGN KEY(IDFood) REFERENCES Food(IDFood)
 )
-
+drop table Staff
 create table Bill
 (
 	IDBill int IDENTITY(1,1) PRIMARY KEY,

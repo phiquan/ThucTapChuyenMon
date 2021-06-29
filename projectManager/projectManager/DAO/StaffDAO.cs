@@ -21,14 +21,14 @@ namespace projectManager.DAO
 
         public object staff()
         {
-            string query = "SELECT * FROM Staff";
+            string query = "SELECT IDStaff,NameStaff,Email,Pass,Gender FROM Staff where Status='1'";
             return DataProvider.Instance.ExecuteQuery(query);
         }
 
         public void Delete(int id)
         {
 
-            string query = "Delete From Staff Where IDStaff=" + id + "";
+            string query = "Update Staff Set Status='0' Where IDStaff=" + id + "";
             DataProvider.Instance.ExucuteNonQuery(query);
         }
 
@@ -40,7 +40,7 @@ namespace projectManager.DAO
 
         public void Add(string name, string email, string pass, string gender)
         {           
-            string query = "Insert into Staff values(N'" + name + "','" + email + "','" + pass + "','" + gender + "')";
+            string query = "Insert into Staff values(N'" + name + "','" + email + "','" + pass + "','" + gender + "','1')";
             DataProvider.Instance.ExucuteNonQuery(query);
         }
 

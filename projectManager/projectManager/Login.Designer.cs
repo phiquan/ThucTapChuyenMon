@@ -65,6 +65,7 @@
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(239, 27);
             this.txtEmail.TabIndex = 9;
+            this.txtEmail.Text = "phiquan2509@gmail.com";
             // 
             // label3
             // 
@@ -91,7 +92,7 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(263, 108);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(321, 36);
+            this.label1.Size = new System.Drawing.Size(388, 36);
             this.label1.TabIndex = 6;
             this.label1.Text = "Đăng Nhập Quản Lý";
             // 

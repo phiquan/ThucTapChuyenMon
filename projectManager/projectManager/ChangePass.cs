@@ -20,17 +20,27 @@ namespace projectManager
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            //this.Hide();
         }
 
         private void btnSubmit_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void bunifuButton1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
+
+        private void btnSubmit_Click_1(object sender, EventArgs e)
         {
             string passOld = txtPassOld.Text;
             string passNew = txtPassNew.Text;
             string passAgain = txtPassAgain.Text;
             if (LoginDAO.Instance.checkPass(passOld))
             {
-                if(passNew == passAgain)
+                if (passNew == passAgain)
                 {
                     LoginDAO.Instance.ChangePass(passNew);
                     MessageBox.Show("Đổi mật khẩu thành công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
