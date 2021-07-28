@@ -26,10 +26,10 @@ Giảng viên: Thầy Nguyễn Lê Minh. 
 11. Báo cáo số lượng doanh thu và hàng hóa khi đăng xuất ca làm việc của nhân viên
 12. Thống kê doanh số trong tháng (theo tháng từ đầu tháng đến cuối tháng)
 13. Kiểm tra hóa đơn quyền quản lý, có thể xem theo ngày
+14. Đóng gói chương trình
 
 ## Phần 3: Các chức năng chưa hoàn thành:
 1. In hóa đơn
-2. Đóng gói chương trình
 
 ## Hướng dẫn sử dụng:
 1. Quyền quản lý đăng nhập với Email: phiquan2509@gmail.com password: 123 
