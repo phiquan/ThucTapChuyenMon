@@ -36,3 +36,5 @@ Giảng viên: Thầy Nguyễn Lê Minh. 
 2. Quyền nhân viên với các email và password của nhân viên ví dụ email: phiquan@gmail.com  password: 1234. Nhân viên chỉ có quyền tạo hóa đơn và xem hóa đơn, còn xóa hóa đơn thì yêu cầu quyền đăng nhập của quản lý mới xóa được.
 
 Xin cám ơn!
+![image](https://user-images.githubusercontent.com/80434542/158098063-ea17ec44-2bf6-447b-a2ca-f0ca8c5056c5.png)
+
